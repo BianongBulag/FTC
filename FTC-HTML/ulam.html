@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ulam | Feed the Curious</title>
+  <meta name="description" content="Recipes, food memories, and the comfort of Filipino cuisine by Adryenne.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 50px;
+    }
+
+    .blog-post {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .blog-post-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 25px;
+    }
+
+    .blog-post-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .blog-post:hover .blog-post-img img {
+      transform: scale(1.02);
+    }
+
+    .blog-post-meta {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .blog-post h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .blog-post p {
+      color: var(--text-light);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    /* Sidebar */
+    .sidebar-widget {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+    }
+
+    .sidebar-widget h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--bg-color);
+      position: relative;
+    }
+
+    .sidebar-widget h3::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .category-list {
+      list-style: none;
+    }
+
+    .category-list li {
+      margin-bottom: 12px;
+    }
+
+    .category-list a {
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .category-list a:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .category-count {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Feed the Curious Logo" class="brand-logo-img">
+        <div class="logo-text">Feed the Curious</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="ulam.html">Ulam Stories</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="food-trips.html">Food Trips</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="script-text">Food Stories</span>
+      <h1>Ulam</h1>
+      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto; font-size: 18px;">Sharing the warmth of
+        home-cooked meals, family recipes passed down, and the memories tied to every bite of Filipino cuisine.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container blog-layout">
+      <!-- Main Content -->
+      <div class="main-content">
+
+        <article class="blog-post">
+          <div class="blog-post-img">
+            <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=1200"
+              alt="Sinigang Bowl">
+          </div>
+          <span class="blog-post-meta">Food Memories &middot; Oct 12, 2026 &middot; <span
+              class="read-time"></span></span>
+          <h2><a href="#">The Comfort of Rainy Day Sinigang</a></h2>
+          <p>There is something inherently grounding about the smell of tamarind and pork boiling in a pot on a rainy
+            Tuesday. Growing up, the exact sourness of the broth depended entirely on whoever was cooking—my lola
+            preferred it mouth-puckeringly sour, while my mom liked a gentle tang. Today, I'm sharing my own version, a
+            deeply personal memory of cooking pork sinigang during the monsoon season, and why the sour broth always
+            feels like a warm hug.</p>
+          <a href="#" class="btn btn-outline">Read Story</a>
+        </article>
+
+        <article class="blog-post">
+          <div class="blog-post-img">
+            <img src="https://images.unsplash.com/photo-1606115915090-bc185b196c09?auto=format&fit=crop&q=80&w=1200"
+              alt="Chicken Adobo">
+          </div>
+          <span class="blog-post-meta">Recipes &middot; Sep 28, 2026 &middot; <span class="read-time"></span></span>
+          <h2><a href="#">Perfecting the Classic Chicken Adobo</a></h2>
+          <p>Every Filipino household claims their adobo is the best one. Is it the ratio of soy sauce to vinegar? The
+            amount of garlic? Whether or not you add sugar? After years of experimenting with different variations, I've
+            finally found the balance that tastes like home to me. It's saucy, garlicky, and begs for a mountain of
+            steaming white rice.</p>
+          <a href="#" class="btn btn-outline">Get Recipe</a>
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3>Categories</h3>
+          <ul class="category-list">
+            <li><a href="#">Recipes <span class="category-count">(12)</span></a></li>
+            <li><a href="#">Food Memories <span class="category-count">(8)</span></a></li>
+            <li><a href="#">Filipino Cuisine <span class="category-count">(15)</span></a></li>
+            <li><a href="#">International Food <span class="category-count">(5)</span></a></li>
+            <li><a href="#">Cooking Tips <span class="category-count">(4)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>About Ulam</h3>
+          <p style="font-size: 14px; color: var(--text-light); margin-bottom: 0;">"Ulam" represents more than just a
+            main dish—it's the centerpiece of the Filipino dining table. Here, I share the recipes and stories that feed
+            my soul.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h2 style="font-family: var(--font-script); font-size: 32px; color: var(--secondary); margin-bottom: 5px;">Feed
+        the Curious</h2>
+      <p class="tagline" style="color: white; opacity: 0.8;">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+
+      <div class="copyright">
+        &copy; 2026 Feed the Curious by Adryenne. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

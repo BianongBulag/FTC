@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Trips | Feed the Curious</title>
+  <meta name="description"
+    content="Following the food wherever it leads: Manila eats, local provinces, and international finds.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .trips-header {
+      padding: 180px 0 100px;
+      text-align: center;
+      background: linear-gradient(rgba(28, 53, 87, 0.6), rgba(28, 53, 87, 0.4)), url('images/Food-Crawl.jpg') center/cover;
+      color: white;
+    }
+
+    .trips-header h1 {
+      color: white;
+      font-size: 56px;
+      margin-bottom: 10px;
+    }
+
+    .trip-card {
+      display: flex;
+      margin-bottom: 80px;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border-color);
+    }
+
+    .trip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .trip-card.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .trip-img-wrap {
+      flex: 1;
+      position: relative;
+    }
+
+    .trip-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 400px;
+    }
+
+    .location-tag {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .location-tag::before {
+      content: '📍';
+      font-size: 16px;
+    }
+
+    .trip-card.reverse .location-tag {
+      left: auto;
+      right: 20px;
+    }
+
+    .trip-content {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .trip-content h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .highlights-box {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      margin: 20px 0;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .highlights-box h4 {
+      font-family: var(--font-body);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .highlights-box ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: var(--text-main);
+    }
+
+    .hidden-gem {
+      font-style: italic;
+      color: var(--text-light);
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .hidden-gem::before {
+      content: '✨ Hidden Gem: ';
+      font-weight: bold;
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    @media (max-width: 900px) {
+
+      .trip-card,
+      .trip-card.reverse {
+        flex-direction: column;
+      }
+
+      .trip-img {
+        height: 300px;
+        min-height: auto;
+      }
+
+      .trip-content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Feed the Curious Logo" class="brand-logo-img">
+        <div class="logo-text">Feed the Curious</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="ulam.html">Ulam Stories</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="food-trips.html" class="active">Food Trips</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="trips-header">
+    <div class="container">
+      <span class="script-text" style="color: var(--secondary);">Follow the flavor</span>
+      <h1>Food Trips</h1>
+      <p style="font-size: 20px; max-width: 600px; margin: 0 auto;">Mapping out cravings line by line. From bustling
+        hawker centers to hidden local gems.</p>
+    </div>
+  </header>
+
+  <section class="section" style="background-color: #f7f9fc;">
+    <div class="container">
+
+      <!-- Trip 1 -->
+      <article class="trip-card">
+        <div class="trip-img-wrap">
+          <span class="location-tag">Binondo, Manila</span>
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1000"
+            alt="Street food in Binondo" class="trip-img">
+        </div>
+        <div class="trip-content">
+          <h2>The Ultimate Binondo Crawl</h2>
+          <p>The oldest Chinatown in the world offers an overwhelming sensory experience. Escaping the sweltering Manila
+            heat meant ducking into tiny hole-in-the-wall establishments to find comfort in a bowl of hand-pulled
+            noodles.</p>
+
+          <div class="highlights-box">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Fried Siopao from Shanghai Fried Siopao</li>
+              <li>Hand-pulled beef noodles from Lan Zhou La Mien</li>
+              <li>Toasted Siopao near the church</li>
+            </ul>
+          </div>
+
+          <p class="hidden-gem">There’s an unnamed cart corner street selling the crispiest lumpia at 2 PM exactly. Get
+            there by 1:45 PM.</p>
+        </div>
+      </article>
+
+      <!-- Trip 2 -->
+      <article class="trip-card reverse">
+        <div class="trip-img-wrap">
+          <span class="location-tag">Osaka, Japan</span>
+          <img src="images/takoyaki.jpg" alt="Takoyaki in Osaka" class="trip-img">
+        </div>
+        <div class="trip-content">
+          <h2>Kuidaore in Dotonbori</h2>
+          <p>"Kuidaore", meaning to eat oneself into ruin. The neon lights reflect off the canal while the rich smell of
+            okonomiyaki and takoyaki wafts through the chilly air. It was a chaotic, delicious weekend.</p>
+
+          <div class="highlights-box">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Michelin-starred takoyaki</li>
+              <li>Wagyu beef skewers</li>
+              <li>Melon pan ice cream</li>
+            </ul>
+          </div>
+
+          <p class="hidden-gem">Skip the main Okonomiyaki chains and head to the narrow alleys behind Dotombori arcades;
+            the wait is shorter and the chefs griddle right in front of you.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h2 style="font-family: var(--font-script); font-size: 32px; color: var(--secondary); margin-bottom: 5px;">Feed
+        the Curious</h2>
+      <p class="tagline" style="color: white; opacity: 0.8;">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+      <div class="copyright">
+        &copy; 2026 Feed the Curious by Adryenne. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

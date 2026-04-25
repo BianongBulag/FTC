@@ -1,0 +1,128 @@
+.page-header {
+  padding: 140px 0 60px;
+  text-align: center;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.main-content {
+  min-width: 0;
+}
+
+.blog-post {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-post-img {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.blog-post-img img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.blog-post:hover .blog-post-img img {
+  transform: scale(1.02);
+}
+
+.blog-post-meta {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.blog-post h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.blog-post h2 a {
+  color: var(--primary);
+}
+
+.blog-post p {
+  color: var(--text-light);
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* Sidebar */
+.sidebar-widget {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.sidebar-widget h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-color);
+  position: relative;
+}
+
+.sidebar-widget h3::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list li {
+  margin-bottom: 12px;
+}
+
+.category-list a {
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.category-list a:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.category-count {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

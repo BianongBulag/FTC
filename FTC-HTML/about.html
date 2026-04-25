@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Feed the Curious</title>
+  <meta name="description" content="Meet Adryenne, the curator of Feed the Curious.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-header {
+      padding: 140px 0 0;
+      background-color: var(--bg-color);
+      position: relative;
+    }
+
+    .about-hero-img {
+      width: 100%;
+      height: 60vh;
+      min-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content-narrow {
+      max-width: 800px;
+      margin: -100px auto 80px;
+      background: var(--card-bg);
+      padding: 60px 80px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 10;
+      border-top: 5px solid var(--accent);
+    }
+
+    .bio-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .bio-title h1 {
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    .bio-content h2,
+    .bio-content h3 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .bio-content img.inline-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      margin: 30px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bio-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      color: var(--text-main);
+    }
+
+    .bio-content p:first-of-type::first-letter {
+      font-family: var(--font-heading);
+      font-size: 60px;
+      font-weight: 700;
+      color: var(--primary);
+      float: left;
+      line-height: 1;
+      padding-right: 12px;
+      margin-top: -5px;
+    }
+
+    .signature {
+      font-family: var(--font-script);
+      font-size: 36px;
+      color: var(--secondary);
+      margin-top: 40px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .content-narrow {
+        margin: -50px 20px 60px;
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/logo.png" alt="Feed the Curious Logo" class="brand-logo-img">
+        <div class="logo-text">Feed the Curious</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="ulam.html">Ulam Stories</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="food-trips.html">Food Trips</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="about-header">
+    <img src="images/about-me-1.jpg" alt="Adryenne sitting at a cafe" class="about-hero-img">
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="content-narrow">
+        <div class="bio-title">
+          <span class="script-text">Mabuhay!</span>
+          <h1>I'm Adryenne.</h1>
+        </div>
+
+        <div class="bio-content">
+          <p>My love for food didn't start in a fancy restaurant or a trendy multi-roaster café. It started in a small
+            family restaurant in the province called <strong>Everlasting</strong>, where my grandfather and mother
+            cooked authentic Filipino food with nothing but heart, fire, and a traditional <em>pugon</em> fueled by
+            <em>ipa</em> that never seemed to go cold.
+          </p>
+
+          <img src="images/everlasting.png" alt="Everlasting Restaurant Pencil Sketch" class="inline-img">
+
+          <h3>My Culinary Roots: Cooking with Heart</h3>
+          <p>I grew up in that kitchen long before I was tall enough to reach the stove. At six or seven years old, I
+            was already helping serve food to customers. I watched my grandfather and mother carefully simmer beloved
+            classics like <em>menudo, afritada, adobo,</em> and <em>kare-kare</em>, and masterfully stir massive batches
+            of <em>lomi</em> and <em>pancit guisado</em> for everyone from everyday regulars to entire wedding
+            celebrations.</p>
+
+          <p>Food, in our family, was never just a meal. It was how we showed up for people.</p>
+
+          <p>By high school, I was finally behind the stove myself. The very first dish I ever cooked was our signature
+            <em>lomi</em>. That moment felt less like learning a skill, and more like stepping into a deeply rooted
+            family tradition that had always been waiting for me. That is the exact passion I carry with me today.
+          </p>
+
+          <h3>Following the Flavor Across the Philippines</h3>
+          <p>Today, I'm based in Metro Manila, but I follow the food wherever it leads. As a home cook and passionate
+            food traveler, my journey takes me from hidden local spots in the city to out-of-town adventures across the
+            Philippines, and even beyond our borders.</p>
+
+          <p>I am drawn to Filipino food culture above all—especially uncovering regional dishes and
+            the rich history behind how they came to be. But if there’s a new flavor waiting in any corner of the world,
+            I’ll never say no to trying it.</p>
+
+          <h3>Welcome to Feed the Curious</h3>
+          <p>This website is my love letter. It is a tribute to Filipino food and culture, to the hidden gems worth
+            traveling hours for, to the quiet cafés that feel like a sanctuary in a busy day, and most importantly, to
+            every person behind the counter who has a story to tell.</p>
+
+          <p>Because every dish has a story. And I'm here to find it.</p>
+          <p>Welcome to my table. I'm so glad you're here.</p>
+
+          <div class="signature">Adryenne</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h2 style="font-family: var(--font-script); font-size: 32px; color: var(--secondary); margin-bottom: 5px;">Feed
+        the Curious</h2>
+      <p class="tagline" style="color: white; opacity: 0.8;">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+      <div class="copyright">
+        &copy; 2026 Feed the Curious by Adryenne. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
