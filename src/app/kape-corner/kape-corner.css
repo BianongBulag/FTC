@@ -1,0 +1,83 @@
+/* Warm/Muted Theme specific for Kape Corner */
+body {
+  background-color: #FDFBF7;
+}
+
+.kape-hero {
+  padding: 180px 0 100px;
+  text-align: center;
+  background: linear-gradient(rgba(45, 34, 25, 0.7), rgba(45, 34, 25, 0.5)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=2000') center/cover;
+  color: #FDFBF7;
+}
+
+.kape-hero h1 {
+  color: #FDFBF7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.kape-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.coffee-card {
+  background: #FFFFFF;
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(100, 80, 70, 0.05);
+  border: 1px solid #EBE4D5;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+.coffee-card:hover {
+  box-shadow: 0 15px 30px rgba(100, 80, 70, 0.1);
+  transform: translateY(-5px);
+}
+
+.coffee-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  filter: sepia(20%) contrast(90%);
+}
+
+.coffee-category {
+  color: #A67C52;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.coffee-card h3 {
+  font-size: 24px;
+  color: #3C2E24;
+  margin-bottom: 15px;
+}
+
+.coffee-card p {
+  color: #6D5C50;
+  font-size: 16px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  color: #A67C52;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #A67C52;
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+
+.read-more:hover {
+  color: #3C2E24;
+  border-color: #3C2E24;
+}
