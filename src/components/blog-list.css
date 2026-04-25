@@ -7,8 +7,15 @@
 
 .blog-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.main-content {
+  min-width: 0;
 }
 
 .blog-post {
@@ -113,8 +120,9 @@
   font-size: 14px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .blog-layout {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
