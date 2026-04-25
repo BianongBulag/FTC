@@ -1,0 +1,103 @@
+FTC - FEED THE CURIOUS
+SEO AUDIT REPORT
+Date: April 26, 2026
+====================================================
+
+ESTIMATED SCORE: ~65 / 100
+
+
+====================================================
+WHAT'S ALREADY GOOD
+====================================================
+
+- lang="en" on <html> tag
+- Next.js font optimization (no render-blocking fonts)
+- Semantic HTML: <main>, <article>, <header>, <section>, <footer>
+- generateStaticParams = fully static pages (fast load)
+- Next.js <Image> component used on most images
+- Alt text present on images
+- Good heading hierarchy: h1 > h2 > h3
+- Global title + description in layout.tsx
+
+
+====================================================
+WHAT'S HURTING THE SCORE
+====================================================
+
+CRITICAL
+--------
+1. Every page uses the same title and description
+   - All pages show: "Feed the Curious | Food, Coffee, Culture & Stories"
+   - Google penalizes duplicate meta titles across pages
+   - Fix: Add unique `export const metadata` to each page.tsx
+
+2. No Open Graph tags
+   - Social shares (Facebook, Messenger, Viber) show no image or title
+   - Fix: Add og:title, og:description, og:image to each page metadata
+
+3. No sitemap.xml
+   - Google cannot efficiently discover all posts and pages
+   - Fix: Create src/app/sitemap.ts (auto-generates from posts data)
+
+4. Article hero uses CSS backgroundImage
+   - Not optimized for LCP (Largest Contentful Paint)
+   - Google PageSpeed flags this
+   - Fix: Replace with Next.js <Image> component
+
+5. No JSON-LD structured data
+   - Missing rich results in Google (stars, author, date under search result)
+   - Fix: Add BlogPosting schema to each article page
+
+MINOR
+-----
+6. No robots.txt
+7. No <link rel="canonical"> on pages
+8. No Twitter/X card meta tags
+9. No favicon defined in Next.js metadata API
+
+
+====================================================
+TOP 3 FIXES FOR BIGGEST GAIN (gets to ~90+)
+====================================================
+
+Priority 1 — Per-page metadata
+  Add unique title + description + Open Graph to:
+  - src/app/page.tsx (homepage)
+  - src/app/about/page.tsx
+  - src/app/ulam/page.tsx
+  - src/app/kape-corner/page.tsx
+  - src/app/food-trips/page.tsx
+  - src/app/[category]/[slug]/page.tsx (dynamic per post)
+
+Priority 2 — Open Graph tags
+  Add to all page metadata:
+  - og:title
+  - og:description
+  - og:image (use post imageUrl for articles)
+  - og:type (article / website)
+  - og:url
+
+Priority 3 — Sitemap
+  Create src/app/sitemap.ts
+  Include: homepage, about, category pages, all post URLs
+
+
+====================================================
+SCORE PROJECTION
+====================================================
+
+Current:  ~65 / 100
+After P1: ~78 / 100
+After P2: ~85 / 100
+After P3: ~90+ / 100
+
+
+====================================================
+NOTES
+====================================================
+
+- Content quality matters too: longer, richer post content
+  improves ranking beyond technical fixes
+- Google indexes faster when site is deployed (Vercel recommended)
+- Consider adding Google Search Console after deployment
+====================================================
