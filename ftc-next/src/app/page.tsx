@@ -23,7 +23,6 @@ export default function Home() {
       date: 'Oct 08, 2026',
       readTime: '3 min read',
       imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800',
-      badgeColor: '#E87D5A',
     },
     {
       title: 'Binondo Weekend Crawl',
@@ -34,7 +33,6 @@ export default function Home() {
       date: 'Oct 02, 2026',
       readTime: '6 min read',
       imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800',
-      badgeColor: 'var(--primary)',
     },
   ];
 
@@ -58,13 +56,20 @@ export default function Home() {
             <h2>Freshly Served</h2>
           </div>
 
-          <div className="grid">
+          <div className="magazine-grid">
             {featuredPosts.map((post) => (
               <PostCard key={post.slug} {...post} />
             ))}
           </div>
         </div>
       </section>
+
+      {/* Wave transition into about section */}
+      <div className="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="white" />
+        </svg>
+      </div>
 
       {/* About Intro */}
       <section className="about-preview">

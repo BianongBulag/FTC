@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getCategoryStyle } from '@/lib/categories';
 
 interface PostCardProps {
   title: string;
@@ -10,8 +11,6 @@ interface PostCardProps {
   slug: string;
   categorySlug: string;
   readTime?: string;
-  badgeColor?: string;
-  badgeTextColor?: string;
 }
 
 export default function PostCard({
@@ -23,10 +22,9 @@ export default function PostCard({
   slug,
   categorySlug,
   readTime = '3 min read',
-  badgeColor,
-  badgeTextColor = 'white',
 }: PostCardProps) {
   const href = `/${categorySlug}/${slug}`;
+  const badgeStyle = getCategoryStyle(categorySlug);
 
   return (
     <article className="card">
@@ -34,7 +32,7 @@ export default function PostCard({
         <div className="card-img">
           <span
             className="card-badge"
-            style={{ background: badgeColor, color: badgeTextColor }}
+            style={{ background: badgeStyle.bg, color: badgeStyle.text }}
           >
             {category}
           </span>
@@ -54,8 +52,8 @@ export default function PostCard({
         <p>{excerpt}</p>
         <div className="card-meta">
           <span>{date}</span> &middot; <span className="read-time">{readTime}</span>
-          <Link href={href} className="read-more">Read more →</Link>
         </div>
+        <Link href={href} className="read-more">Read more →</Link>
       </div>
     </article>
   );

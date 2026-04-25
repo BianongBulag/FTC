@@ -5,7 +5,7 @@
   --primary: #5B9BD5;    /* Morning Sky Blue */
   --secondary: #F6C94E;  /* Sunrise Gold */
   --accent: #E87D5A;     /* Papaya Coral */
-  --bg-color: #EAF4FB;   /* Sky Mist (main page background) */
+  --bg-color: #FDF8F2;   /* Warm Parchment (main page background) */
   --card-bg: #FFFFFF;    /* Pure White */
   --text-main: #1C3557;  /* Deep Navy (body text) */
 
@@ -189,18 +189,29 @@ img {
   gap: 10px;
 }
 
-.brand-logo-img {
-  height: 46px;
-  width: auto;
-  border-radius: 8px;
-  display: block;
-}
 
 .logo-text {
-  font-family: var(--font-heading);
-  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0;
+}
+
+.logo-script {
+  font-family: var(--font-script);
+  font-size: 21px;
   font-weight: 700;
-  color: var(--primary);
+  color: #C99420;
+  line-height: 1;
+}
+
+.logo-serif {
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 700;
+  color: #1C3557;
+  line-height: 1;
+  margin-top: -5px;
 }
 
 .nav-links {
@@ -253,22 +264,39 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 70px; /* Offset for navbar */
+  margin-top: 70px;
   background: linear-gradient(rgba(28, 53, 87, 0.4), rgba(28, 53, 87, 0.6)), url('https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
   color: white;
+}
+
+/* Grain texture overlay for warmth */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 .hero-content {
   max-width: 800px;
   padding: 0 20px;
+  position: relative;
   z-index: 2;
 }
 
 .hero h1 {
   color: white;
-  font-size: clamp(40px, 6vw, 80px); /* Responsive typography */
+  font-size: clamp(40px, 6vw, 80px);
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero .script-text {
+  font-size: 3.5em;
 }
 
 .hero .tagline {
@@ -283,6 +311,39 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+}
+
+/* Magazine layout: large featured card left, two stacked right */
+.magazine-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.magazine-grid .card:first-child {
+  grid-row: span 2;
+}
+
+.magazine-grid .card:first-child .card-img {
+  height: 360px;
+}
+
+.magazine-grid .card:first-child .card-content h3 {
+  font-size: 26px;
+}
+
+/* Wave section divider */
+.wave-divider {
+  background-color: var(--bg-color);
+  line-height: 0;
+  margin-bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
 }
 
 .card {
@@ -369,18 +430,21 @@ img {
 .card-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 6px;
   font-size: 13px;
   color: var(--text-light);
   border-top: 1px solid var(--border-color);
   padding-top: 15px;
+  margin-bottom: 14px;
 }
 
 .read-more {
+  display: inline-block;
   font-size: 13px;
   font-weight: 700;
   color: var(--accent);
-  transition: color 0.2s ease;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
 .read-more:hover {
@@ -491,6 +555,18 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  .magazine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .magazine-grid .card:first-child {
+    grid-row: auto;
+  }
+
+  .magazine-grid .card:first-child .card-img {
+    height: 220px;
+  }
 
   .nav-links {
     display: none;

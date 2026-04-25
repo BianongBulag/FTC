@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
@@ -23,9 +22,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="container">
-        <Link href="/" className="navbar-brand">
-          <Image src="/images/logo.png" alt="Feed the Curious Logo" width={46} height={46} className="brand-logo-img" />
-          <div className="logo-text">Feed the Curious</div>
+        <Link href="/" className="navbar-brand" aria-label="Feed the Curious – home">
+          <div className="logo-text">
+            <span className="logo-script">Feed the</span>
+            <span className="logo-serif">Curious</span>
+          </div>
         </Link>
         <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
