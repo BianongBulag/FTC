@@ -1,40 +1,11 @@
 import PostCard from '@/components/PostCard';
 import Link from 'next/link';
 import Image from 'next/image';
+import { posts } from '@/lib/posts';
+import { getCategoryLabel } from '@/lib/categories';
 
 export default function Home() {
-  const featuredPosts = [
-    {
-      title: 'The Comfort of Rainy Day Sinigang',
-      excerpt: 'A deeply personal memory of cooking pork sinigang during the monsoon season, and why the sour broth always feels like a warm hug.',
-      category: 'Ulam Stories',
-      categorySlug: 'ulam',
-      slug: 'the-comfort-of-rainy-day-sinigang',
-      date: 'Oct 12, 2026',
-      readTime: '4 min read',
-      imageUrl: 'https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=800',
-    },
-    {
-      title: 'Finding Stillness in a Pour-Over',
-      excerpt: "Reviewing that hidden neighborhood cafe where the barista takes 10 minutes to serve your coffee, and why it's absolutely worth the wait.",
-      category: 'Kape Corner',
-      categorySlug: 'kape-corner',
-      slug: 'finding-stillness-in-a-pour-over',
-      date: 'Oct 08, 2026',
-      readTime: '3 min read',
-      imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800',
-    },
-    {
-      title: 'Binondo Weekend Crawl',
-      excerpt: 'Navigating the oldest Chinatown in the world. From crispy fried dumplings to authentic hand-pulled noodles hidden in narrow alleys.',
-      category: 'Food Trips',
-      categorySlug: 'food-trips',
-      slug: 'binondo-weekend-crawl',
-      date: 'Oct 02, 2026',
-      readTime: '6 min read',
-      imageUrl: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800',
-    },
-  ];
+  const featuredPosts = posts.slice(0, 3);
 
   return (
     <main>
@@ -58,7 +29,17 @@ export default function Home() {
 
           <div className="magazine-grid">
             {featuredPosts.map((post) => (
-              <PostCard key={post.slug} {...post} />
+              <PostCard
+                key={post.slug}
+                title={post.title}
+                excerpt={post.subtitle}
+                category={getCategoryLabel(post.category)}
+                categorySlug={post.category}
+                slug={post.slug}
+                date={post.date}
+                readTime={post.readTime}
+                imageUrl={post.imageUrl}
+              />
             ))}
           </div>
         </div>

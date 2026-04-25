@@ -1,10 +1,13 @@
+import Link from 'next/link';
 import Image from 'next/image';
+import { posts } from '@/lib/posts';
 import './food-trips.css';
 
 export default function FoodTripsPage() {
+  const foodTrips = posts.filter((p) => p.category === 'food-trips');
+
   return (
     <main>
-      {/* Page Header */}
       <header className="trips-header">
         <div className="container">
           <span className="script-text" style={{ color: 'var(--secondary)' }}>Follow the flavor</span>
@@ -17,78 +20,30 @@ export default function FoodTripsPage() {
 
       <section className="section" style={{ backgroundColor: '#f7f9fc' }}>
         <div className="container">
-
-          {/* Trip 1 */}
-          <article className="trip-card">
-            <div className="trip-img-wrap">
-              <span className="location-tag">Binondo, Manila</span>
-              <Image
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1000"
-                alt="Street food in Binondo"
-                className="trip-img"
-                width={1000}
-                height={600}
-              />
-            </div>
-            <div className="trip-content">
-              <h2>The Ultimate Binondo Crawl</h2>
-              <p>
-                The oldest Chinatown in the world offers an overwhelming sensory experience. Escaping the sweltering Manila
-                heat meant ducking into tiny hole-in-the-wall establishments to find comfort in a bowl of hand-pulled
-                noodles.
-              </p>
-
-              <div className="highlights-box">
-                <h4>Highlights</h4>
-                <ul>
-                  <li>Fried Siopao from Shanghai Fried Siopao</li>
-                  <li>Hand-pulled beef noodles from Lan Zhou La Mien</li>
-                  <li>Toasted Siopao near the church</li>
-                </ul>
+          {foodTrips.map((post, index) => (
+            <article key={post.slug} className={`trip-card${index % 2 !== 0 ? ' reverse' : ''}`}>
+              <div className="trip-img-wrap">
+                <span className="location-tag">{post.tags}</span>
+                <Image
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="trip-img"
+                  width={1000}
+                  height={600}
+                />
               </div>
-
-              <p className="hidden-gem">
-                There&apos;s an unnamed cart corner street selling the crispiest lumpia at 2 PM exactly. Get
-                there by 1:45 PM.
-              </p>
-            </div>
-          </article>
-
-          {/* Trip 2 */}
-          <article className="trip-card reverse">
-            <div className="trip-img-wrap">
-              <span className="location-tag">Osaka, Japan</span>
-              <Image
-                src="/images/takoyaki.jpg"
-                alt="Takoyaki in Osaka"
-                className="trip-img"
-                width={1000}
-                height={600}
-              />
-            </div>
-            <div className="trip-content">
-              <h2>Kuidaore in Dotonbori</h2>
-              <p>
-                &quot;Kuidaore&quot;, meaning to eat oneself into ruin. The neon lights reflect off the canal while the rich smell of
-                okonomiyaki and takoyaki wafts through the chilly air. It was a chaotic, delicious weekend.
-              </p>
-
-              <div className="highlights-box">
-                <h4>Highlights</h4>
-                <ul>
-                  <li>Michelin-starred takoyaki</li>
-                  <li>Wagyu beef skewers</li>
-                  <li>Melon pan ice cream</li>
-                </ul>
+              <div className="trip-content">
+                <h2>{post.title}</h2>
+                <p>{post.subtitle}</p>
+                <div className="card-meta" style={{ marginTop: '20px', color: 'var(--text-light)', fontSize: '14px' }}>
+                  <span>{post.date}</span> · <span>{post.readTime}</span>
+                </div>
+                <Link href={`/food-trips/${post.slug}`} className="read-more" style={{ marginTop: '20px', display: 'inline-block' }}>
+                  Read more →
+                </Link>
               </div>
-
-              <p className="hidden-gem">
-                Skip the main Okonomiyaki chains and head to the narrow alleys behind Dotombori arcades;
-                the wait is shorter and the chefs griddle right in front of you.
-              </p>
-            </div>
-          </article>
-
+            </article>
+          ))}
         </div>
       </section>
     </main>

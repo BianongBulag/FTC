@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { posts } from '@/lib/posts';
 import '@/components/blog-list.css';
 
 export default function UlamPage() {
+  const ulamPosts = posts.filter((p) => p.category === 'ulam');
+
   return (
     <main>
-      {/* Page Header */}
       <header className="page-header">
         <div className="container">
           <span className="script-text">Food Stories</span>
@@ -18,67 +20,28 @@ export default function UlamPage() {
 
       <section className="section">
         <div className="container blog-layout">
-          {/* Main Content */}
           <div className="main-content">
-            <article className="blog-post">
-              <div className="blog-post-img">
-                <Image
-                  src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=1200"
-                  alt="Sinigang Bowl"
-                  width={1200}
-                  height={400}
-                />
-              </div>
-              <span className="blog-post-meta">
-                Food Memories &middot; Oct 12, 2026 &middot; <span className="read-time">4 min read</span>
-              </span>
-              <h2><Link href="/ulam/the-comfort-of-rainy-day-sinigang">The Comfort of Rainy Day Sinigang</Link></h2>
-              <p>
-                There is something inherently grounding about the smell of tamarind and pork boiling in a pot on a rainy
-                Tuesday. Growing up, the exact sourness of the broth depended entirely on whoever was cooking—my lola
-                preferred it mouth-puckeringly sour, while my mom liked a gentle tang. Today, I&apos;m sharing my own version, a
-                deeply personal memory of cooking pork sinigang during the monsoon season, and why the sour broth always
-                feels like a warm hug.
-              </p>
-              <Link href="/ulam/the-comfort-of-rainy-day-sinigang" className="btn btn-outline">Read Story</Link>
-            </article>
-
-            <article className="blog-post">
-              <div className="blog-post-img">
-                <Image
-                  src="https://images.unsplash.com/photo-1606115915090-bc185b196c09?auto=format&fit=crop&q=80&w=1200"
-                  alt="Chicken Adobo"
-                  width={1200}
-                  height={400}
-                />
-              </div>
-              <span className="blog-post-meta">
-                Recipes &middot; Sep 28, 2026 &middot; <span className="read-time">3 min read</span>
-              </span>
-              <h2><Link href="/ulam/perfecting-the-classic-chicken-adobo">Perfecting the Classic Chicken Adobo</Link></h2>
-              <p>
-                Every Filipino household claims their adobo is the best one. Is it the ratio of soy sauce to vinegar? The
-                amount of garlic? Whether or not you add sugar? After years of experimenting with different variations, I&apos;ve
-                finally found the balance that tastes like home to me. It&apos;s saucy, garlicky, and begs for a mountain of
-                steaming white rice.
-              </p>
-              <Link href="/ulam/perfecting-the-classic-chicken-adobo" className="btn btn-outline">Get Recipe</Link>
-            </article>
+            {ulamPosts.map((post) => (
+              <article key={post.slug} className="blog-post">
+                <div className="blog-post-img">
+                  <Image
+                    src={post.imageUrl}
+                    alt={post.title}
+                    width={1200}
+                    height={400}
+                  />
+                </div>
+                <span className="blog-post-meta">
+                  {post.tags} &middot; {post.date} &middot; <span className="read-time">{post.readTime}</span>
+                </span>
+                <h2><Link href={`/ulam/${post.slug}`}>{post.title}</Link></h2>
+                <p>{post.subtitle}</p>
+                <Link href={`/ulam/${post.slug}`} className="btn btn-outline">Read Story</Link>
+              </article>
+            ))}
           </div>
 
-          {/* Sidebar */}
           <aside className="sidebar">
-            <div className="sidebar-widget">
-              <h3>Categories</h3>
-              <ul className="category-list">
-                <li><Link href="/ulam">Recipes <span className="category-count">(12)</span></Link></li>
-                <li><Link href="/ulam">Food Memories <span className="category-count">(8)</span></Link></li>
-                <li><Link href="/ulam">Filipino Cuisine <span className="category-count">(15)</span></Link></li>
-                <li><Link href="/ulam">International Food <span className="category-count">(5)</span></Link></li>
-                <li><Link href="/ulam">Cooking Tips <span className="category-count">(4)</span></Link></li>
-              </ul>
-            </div>
-
             <div className="sidebar-widget">
               <h3>About Ulam</h3>
               <p style={{ fontSize: '14px', color: 'var(--text-light)', marginBottom: 0 }}>
