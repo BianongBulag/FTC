@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 
 :root {
   /* Umaga Theme */
@@ -13,9 +13,7 @@
   --border-color: rgba(91, 155, 213, 0.15); /* Soft blue border */
 
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
-  --font-script: 'Dancing Script', cursive;
+
 
   /* Sizing */
   --radius-sm: 8px;

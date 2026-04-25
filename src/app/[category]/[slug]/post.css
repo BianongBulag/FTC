@@ -11,6 +11,7 @@
 
 .article-hero .card-badge {
   position: absolute;
+  top: auto;
   bottom: 40px;
   left: 10%;
   background: var(--secondary);
