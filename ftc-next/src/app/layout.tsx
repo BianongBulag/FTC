@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Playfair_Display, Lato, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
