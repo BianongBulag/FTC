@@ -4,119 +4,300 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feed the Curious | Food, Coffee, Culture & Stories</title>
-  <meta name="description"
-    content="A personal food and lifestyle blog by Adryenne covering Filipino food, coffee culture, food trips, and personal stories.">
+  <title>Feed the Curious</title>
+  <meta name="description" content="A personal food journal by Adryenne. I go places, eat things, and write it down.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap">
+  <style>
+    body {
+      background-color: #d4cfc8;
+      background-image: url('images/texture-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* ── NAVBAR OVERRIDE (light bg — force dark text at rest) ── */
+    .navbar .logo-text          { color: var(--black); }
+    .navbar .nav-links a        { color: var(--grey); }
+    .navbar .hamburger          { color: var(--black); }
+
+    /* ── HEADER (polaroid area) ──────────────────────────────── */
+    .site-header {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      margin-top: 60px; /* clear fixed navbar */
+    }
+
+    /* ── POLAROID COLLAGE ────────────────────────────────────── */
+    .photos-collage {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .photo-wrap { position: absolute; }
+
+    .photo-wrap:nth-child(1) {
+      left: calc(50% - 675px);
+      top: 12%;
+      transform: rotate(-8deg);
+      z-index: 2;
+    }
+    .photo-wrap:nth-child(2) {
+      left: calc(50% - 395px);
+      top: 6%;
+      transform: rotate(5deg);
+      z-index: 3; /* top of stack */
+    }
+    .photo-wrap:nth-child(3) {
+      left: calc(50% - 125px);
+      top: 10%;
+      transform: rotate(-6deg);
+      z-index: 2;
+    }
+    .photo-wrap:nth-child(4) {
+      left: calc(50% + 145px);
+      top: 5%;
+      transform: rotate(7deg);
+      z-index: 2;
+    }
+    .photo-wrap:nth-child(5) {
+      left: calc(50% + 415px);
+      top: 14%;
+      transform: rotate(-5deg);
+      z-index: 1;
+    }
+
+    /* ── TAPE ─────────────────────────────────────────────────── */
+    .tape {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      width: 66px;
+      height: 19px;
+      z-index: 2;
+      background: linear-gradient(
+        to bottom,
+        rgba(190,170,130,0.42),
+        rgba(215,196,155,0.60),
+        rgba(190,170,130,0.42)
+      );
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .photo-wrap:nth-child(1) .tape { transform: translateX(-50%) rotate( 9deg); }
+    .photo-wrap:nth-child(2) .tape { transform: translateX(-50%) rotate(-6deg); }
+    .photo-wrap:nth-child(3) .tape { transform: translateX(-50%) rotate( 7deg); }
+    .photo-wrap:nth-child(4) .tape { transform: translateX(-50%) rotate(-8deg); }
+    .photo-wrap:nth-child(5) .tape { transform: translateX(-50%) rotate( 5deg); }
+
+    /* ── POLAROID FRAME ──────────────────────────────────────── */
+    .polaroid {
+      background: #EDE8DF;
+      padding: 10px 10px 14px 10px;
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.18),
+        0 2px 4px  rgba(0,0,0,0.09);
+    }
+
+    .polaroid img {
+      display: block;
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .polaroid-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      font-weight: 500;
+      color: #5C4A2A;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+      padding: 0 4px;
+    }
+
+    /* ── TITLE ───────────────────────────────────────────────── */
+    .header-text {
+      position: absolute;
+      bottom: 18px;
+      left: 48px;
+      z-index: 10;
+    }
+
+    .header-title {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 50px;
+      line-height: 1;
+      color: #7A5A3A;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .header-title .red { color: #8B1A1A; }
+
+    .header-tagline {
+      margin-top: 5px;
+      font-size: 17px;
+      font-variant: small-caps;
+      letter-spacing: 4.5px;
+      color: #7A5A3A;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    /* ── CRIMSON BOTTOM RULE ─────────────────────────────────── */
+    .header-rule {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #8B1A1A;
+      z-index: 10;
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.png" alt="Feed the Curious Logo" class="brand-logo-img">
-        <div class="logo-text">Feed the Curious</div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="ulam.html">Ulam Stories</a></li>
+      <a href="index.html" class="navbar-brand"></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
         <li><a href="kape-corner.html">Kape Corner</a></li>
-        <li><a href="food-trips.html">Food Trips</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
-      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <span class="script-text">Welcome to</span>
-      <h1>Feed the Curious</h1>
-      <p class="tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
-      <a href="#featured" class="btn">Explore Stories</a>
+  <!-- Polaroid Header -->
+  <header class="site-header">
+
+    <div class="photos-collage">
+
+      <!--
+        To add a photo: copy one .photo-wrap block below,
+        change the img src, and add a matching nth-child
+        position rule in the CSS above.
+      -->
+
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header01.JPG" alt="feed-the-curious-ayenne-01">
+          <p class="polaroid-caption">local Vietnamese food haunt</p>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header02.JPG" alt="feed-the-curious-ayenne-02">
+          <p class="polaroid-caption">January 9, 2026 - First Date</p>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header04.JPG" alt="feed-the-curious-ayenne-04">
+          <p class="polaroid-caption">morning coffee while waiting for the bus</p>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header03.JPG" alt="feed-the-curious-ayenne-03">
+          <p class="polaroid-caption">at a hidden art café</p>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header05.JPG" alt="feed-the-curious-ayenne-05">
+          <p class="polaroid-caption">cozy japanese resto</p>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Title -->
+    <div class="header-text">
+      <h1 class="header-title">Feed the <span class="red">Curious</span></h1>
+      <p class="header-tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+    </div>
+
+    <div class="header-rule"></div>
+
   </header>
 
-  <!-- Featured Posts Overview -->
-  <section id="featured" class="section">
-    <div class="container">
-      <div class="section-title">
-        <span class="script-text">Latest from the blog</span>
-        <h2>Freshly Served</h2>
-      </div>
-
-      <div class="grid">
-        <!-- Post 1: Ulam -->
-        <article class="card">
-          <div class="card-img">
-            <span class="card-badge">Ulam Stories</span>
-            <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=800"
-              alt="Sinigang Bowl">
-          </div>
-          <div class="card-content">
-            <h3><a href="ulam.html">The Comfort of Rainy Day Sinigang</a></h3>
-            <p>A deeply personal memory of cooking pork sinigang during the monsoon season, and why the sour broth
-              always feels like a warm hug.</p>
-            <div class="card-meta">
-              <span>Oct 12, 2026</span> &middot; <span class="read-time"></span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 2: Kape Corner -->
-        <article class="card">
-          <div class="card-img">
-            <span class="card-badge" style="background: #E87D5A; color: white;">Kape Corner</span>
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800"
-              alt="Pour over coffee">
-          </div>
-          <div class="card-content">
-            <h3><a href="kape-corner.html">Finding Stillness in a Pour-Over</a></h3>
-            <p>Reviewing that hidden neighborhood cafe where the barista takes 10 minutes to serve your coffee, and why
-              it's absolutely worth the wait.</p>
-            <div class="card-meta">
-              <span>Oct 08, 2026</span> &middot; <span class="read-time"></span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 3: Food Trips -->
-        <article class="card">
-          <div class="card-img">
-            <span class="card-badge" style="background: var(--primary); color: white;">Food Trips</span>
-            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800"
-              alt="Street food">
-          </div>
-          <div class="card-content">
-            <h3><a href="food-trips.html">Binondo Weekend Crawl</a></h3>
-            <p>Navigating the oldest Chinatown in the world. From crispy fried dumplings to authentic hand-pulled
-              noodles hidden in narrow alleys.</p>
-            <div class="card-meta">
-              <span>Oct 02, 2026</span> &middot; <span class="read-time"></span>
-            </div>
-          </div>
-        </article>
-      </div>
+  <!-- Feature Entry -->
+  <a href="hunger-notes.html" class="feature-entry">
+    <div class="feature-bg">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1600" alt="Binondo Manila">
     </div>
-  </section>
+    <div class="feature-overlay"></div>
+    <div class="feature-content">
+      <span class="feature-meta">Food Trips &nbsp;·&nbsp; Binondo, Manila &nbsp;·&nbsp; Oct 2026</span>
+      <h2>The Ultimate<br>Binondo Crawl</h2>
+      <p>The oldest Chinatown in the world offers an overwhelming sensory experience. I went for the siopao. I stayed for the hand-pulled noodles hidden in the narrow back alleys.</p>
+      <span class="feature-link">Read the entry &nbsp;→</span>
+    </div>
+  </a>
 
-  <!-- About Intro -->
-  <section class="about-preview">
-    <div class="container">
-      <div class="about-image">
-        <img src="images/Kamusta.jpg" alt="Adryenne portrait holding coffee">
+  <!-- Duo Grid -->
+  <div class="duo-grid">
+
+    <!-- Left: visual entry (B&W) -->
+    <article class="duo-visual">
+      <div class="duo-visual-img">
+        <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&q=80&w=900" alt="Sinigang Bowl">
       </div>
-      <div class="about-text">
-        <span class="script-text">Kumusta! I'm</span>
+      <div class="duo-visual-body">
+        <div class="entry-meta">
+          <span class="entry-cat">Ulam Stories</span>
+          <span class="entry-sep">·</span>
+          <span class="entry-date">Oct 12, 2026</span>
+        </div>
+        <h3><a href="ulam.html">The Comfort of Rainy Day Sinigang</a></h3>
+        <p>My lola preferred it mouth-puckeringly sour. My mom liked a gentle tang. I've been trying to find the version that tastes like both of them.</p>
+        <a href="ulam.html" class="read-link">Read the entry &nbsp;→</a>
+      </div>
+    </article>
+
+    <!-- Right: text note (dark, no image) -->
+    <article class="duo-note">
+      <div class="entry-meta">
+        <span class="entry-cat">Kape Corner</span>
+        <span class="entry-sep" style="color: rgba(255,255,255,0.2);">·</span>
+        <span class="entry-date">Oct 08, 2026</span>
+      </div>
+      <h3><a href="kape-corner.html">Finding Stillness in a Pour-Over</a></h3>
+      <p>"The barista took ten minutes to make my coffee. I didn't check my phone once. I'm not sure what that says about me, but I've been thinking about it since."</p>
+      <a href="kape-corner.html" class="read-link">Read the entry &nbsp;→</a>
+    </article>
+
+  </div>
+
+  <!-- About Strip -->
+  <section class="about-strip">
+    <div class="container">
+      <img src="images/Kamusta.jpg" alt="Adryenne" class="about-strip-img">
+      <div class="about-strip-text">
+        <span class="kicker">The person behind the journal</span>
         <h2>Adryenne</h2>
-        <p>I'm a story-seeker, coffee enthusiast, and lifelong lover of a good home-cooked meal. Feed the Curious is my
-          digital dining table—a place where I share my food adventures, quiet coffee moments, and the beautiful
-          Filipino culture that ties it all together.</p>
-        <p>Whether you're looking for a nostalgic recipe, a recommendation for your next cafe hop, or just a little
-          slice of life, pull up a chair.</p>
-        <a href="about.html" class="btn">Get to Know Me</a>
+        <p>I grew up in a family restaurant in the province, watching my grandfather cook over a wood-fired pugon. That kitchen is where my curiosity started. This journal is where it continues.</p>
+        <a href="about.html" class="about-link">More about me &nbsp;→</a>
       </div>
     </div>
   </section>
@@ -124,24 +305,30 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <h2 style="font-family: var(--font-script); font-size: 32px; color: var(--secondary); margin-bottom: 5px;">Feed
-        the Curious</h2>
-      <p class="tagline" style="color: white; opacity: 0.8;">Food &middot; Coffee &middot; Culture &middot; Stories</p>
-
+      <p class="footer-brand">Feed the Curious</p>
+      <p class="footer-tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
       <ul class="footer-nav">
-        <li><a href="ulam.html">Ulam</a></li>
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
         <li><a href="kape-corner.html">Kape Corner</a></li>
-        <li><a href="food-trips.html">Food Trips</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
-
-      <div class="copyright">
-        &copy; 2026 Feed the Curious by Adryenne. All rights reserved.
-      </div>
+      <div class="copyright">&copy; 2026 Feed the Curious by Adryenne. All rights reserved.</div>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>

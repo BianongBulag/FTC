@@ -7,120 +7,151 @@
   <title>About Me | Feed the Curious</title>
   <meta name="description" content="Meet Adryenne, the curator of Feed the Curious.">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap">
   <style>
-    .about-header {
-      padding: 140px 0 0;
-      background-color: var(--bg-color);
-      position: relative;
+    body {
+      background-color: #d4cfc8;
+      background-image: url('images/texture-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
-    .about-hero-img {
-      width: 100%;
-      height: 60vh;
-      min-height: 400px;
-      object-fit: cover;
-      display: block;
+    .navbar .logo-text   { color: var(--black); }
+    .navbar .nav-links a { color: var(--grey); }
+    .navbar .hamburger   { color: var(--black); }
+
+    .site-header { position: relative; width: 100%; height: 520px; overflow: hidden; margin-top: 60px; }
+    .photos-collage { position: absolute; inset: 0; z-index: 1; }
+    .photo-wrap { position: absolute; }
+    .photo-wrap:nth-child(1) { left: calc(50% - 675px); top: 12%; transform: rotate(-8deg); z-index: 2; }
+    .photo-wrap:nth-child(2) { left: calc(50% - 395px); top: 6%;  transform: rotate(5deg);  z-index: 3; }
+    .photo-wrap:nth-child(3) { left: calc(50% - 125px); top: 10%; transform: rotate(-6deg); z-index: 2; }
+    .photo-wrap:nth-child(4) { left: calc(50% + 145px); top: 5%;  transform: rotate(7deg);  z-index: 2; }
+    .photo-wrap:nth-child(5) { left: calc(50% + 415px); top: 14%; transform: rotate(-5deg); z-index: 1; }
+
+    .tape {
+      position: absolute; top: -11px; left: 50%; width: 66px; height: 19px; z-index: 2;
+      background: linear-gradient(to bottom, rgba(190,170,130,0.42), rgba(215,196,155,0.60), rgba(190,170,130,0.42));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
     }
+    .photo-wrap:nth-child(1) .tape { transform: translateX(-50%) rotate( 9deg); }
+    .photo-wrap:nth-child(2) .tape { transform: translateX(-50%) rotate(-6deg); }
+    .photo-wrap:nth-child(3) .tape { transform: translateX(-50%) rotate( 7deg); }
+    .photo-wrap:nth-child(4) .tape { transform: translateX(-50%) rotate(-8deg); }
+    .photo-wrap:nth-child(5) .tape { transform: translateX(-50%) rotate( 5deg); }
+
+    .polaroid { background: #EDE8DF; padding: 10px 10px 14px 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.09); }
+    .polaroid img { display: block; width: 240px; height: 240px; object-fit: cover; }
+    .polaroid-caption { font-family: 'Caveat', cursive; font-size: 15px; font-weight: 500; color: #5C4A2A; text-align: center; margin-top: 10px; margin-bottom: 6px; line-height: 1.2; padding: 0 4px; }
+    .header-text { position: absolute; bottom: 18px; left: 48px; z-index: 10; }
+    .header-title { font-style: italic; font-weight: bold; font-size: 50px; line-height: 1; color: #7A5A3A; font-family: Georgia, 'Times New Roman', serif; }
+    .header-title .red { color: #8B1A1A; }
+    .header-tagline { margin-top: 5px; font-size: 17px; font-variant: small-caps; letter-spacing: 4.5px; color: #7A5A3A; font-family: Georgia, 'Times New Roman', serif; }
+    .header-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #8B1A1A; z-index: 10; }
 
     .content-narrow {
-      max-width: 800px;
-      margin: -100px auto 80px;
-      background: var(--card-bg);
-      padding: 60px 80px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
+      max-width: 760px;
+      margin: 0 auto 80px;
+      background: var(--white);
+      padding: 64px 72px;
+      border-top: 3px solid var(--red);
       position: relative;
       z-index: 10;
-      border-top: 5px solid var(--accent);
+      box-shadow: 0 20px 60px rgba(46,46,48,0.07);
     }
 
-    .bio-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    .bio-title { margin-bottom: 44px; }
+    .bio-title h1 { font-size: 48px; font-style: italic; color: var(--black); margin-bottom: 0; }
 
-    .bio-title h1 {
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
-
-    .bio-content h2,
     .bio-content h3 {
-      font-family: var(--font-heading);
-      color: var(--primary);
-      margin-top: 40px;
-      margin-bottom: 15px;
+      font-family: var(--font-heading); font-size: 22px; font-style: italic;
+      color: var(--black); margin-top: 44px; margin-bottom: 16px;
+      padding-top: 24px; border-top: 1px solid var(--border);
     }
 
-    .bio-content img.inline-img {
-      width: 100%;
-      border-radius: var(--radius-md);
-      margin: 30px 0;
-      box-shadow: var(--shadow-sm);
-    }
+    .bio-content img.inline-img { width: 100%; margin: 32px 0; display: block; }
 
-    .bio-content p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 25px;
-      color: var(--text-main);
-    }
+    .bio-content p { font-size: 17px; line-height: 1.85; margin-bottom: 24px; color: var(--black); }
 
     .bio-content p:first-of-type::first-letter {
-      font-family: var(--font-heading);
-      font-size: 60px;
-      font-weight: 700;
-      color: var(--primary);
-      float: left;
-      line-height: 1;
-      padding-right: 12px;
-      margin-top: -5px;
+      font-family: var(--font-heading); font-size: 64px; font-weight: 700;
+      color: var(--red); float: left; line-height: 0.85;
+      padding-right: 14px; margin-top: 6px;
     }
 
-    .signature {
-      font-family: var(--font-script);
-      font-size: 36px;
-      color: var(--secondary);
-      margin-top: 40px;
-      text-align: right;
-    }
+    .signature { font-family: var(--font-script); font-size: 40px; color: var(--red); margin-top: 48px; text-align: right; }
 
     @media (max-width: 768px) {
-      .content-narrow {
-        margin: -50px 20px 60px;
-        padding: 40px 30px;
-      }
+      .content-narrow { margin: 0 16px 60px; padding: 40px 28px; }
+      .bio-title h1 { font-size: 36px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.png" alt="Feed the Curious Logo" class="brand-logo-img">
-        <div class="logo-text">Feed the Curious</div>
-      </a>
+      <a href="index.html" class="navbar-brand"></a>
       <ul class="nav-links">
-        <li><a href="ulam.html">Ulam Stories</a></li>
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
         <li><a href="kape-corner.html">Kape Corner</a></li>
-        <li><a href="food-trips.html">Food Trips</a></li>
         <li><a href="about.html" class="active">About Me</a></li>
       </ul>
       <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="about-header">
-    <img src="images/about-me-1.jpg" alt="Adryenne sitting at a cafe" class="about-hero-img">
+  <header class="site-header">
+    <div class="photos-collage">
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header01.JPG" alt="">
+          <p class="polaroid-caption">local Vietnamese food haunt</p>
+        </div>
+      </div>
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header02.JPG" alt="">
+          <p class="polaroid-caption">January 9, 2026 - First Date</p>
+        </div>
+      </div>
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header04.JPG" alt="">
+          <p class="polaroid-caption">morning coffee while waiting for the bus</p>
+        </div>
+      </div>
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header03.JPG" alt="">
+          <p class="polaroid-caption">at a hidden art café</p>
+        </div>
+      </div>
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-header05.JPG" alt="">
+          <p class="polaroid-caption">cozy japanese resto</p>
+        </div>
+      </div>
+    </div>
+    <div class="header-text">
+      <h1 class="header-title">About <span class="red">Me</span></h1>
+      <p class="header-tagline">the person behind the journal</p>
+    </div>
+    <div class="header-rule"></div>
   </header>
 
-  <section class="section" style="padding-top: 0;">
+  <section style="padding-top: 48px; padding-bottom: 80px;">
     <div class="container">
       <div class="content-narrow">
+
         <div class="bio-title">
           <span class="script-text">Mabuhay!</span>
           <h1>I'm Adryenne.</h1>
@@ -135,7 +166,7 @@
 
           <img src="images/everlasting.png" alt="Everlasting Restaurant Pencil Sketch" class="inline-img">
 
-          <h3>My Culinary Roots: Cooking with Heart</h3>
+          <h3>Cooking with Heart</h3>
           <p>I grew up in that kitchen long before I was tall enough to reach the stove. At six or seven years old, I
             was already helping serve food to customers. I watched my grandfather and mother carefully simmer beloved
             classics like <em>menudo, afritada, adobo,</em> and <em>kare-kare</em>, and masterfully stir massive batches
@@ -146,45 +177,54 @@
 
           <p>By high school, I was finally behind the stove myself. The very first dish I ever cooked was our signature
             <em>lomi</em>. That moment felt less like learning a skill, and more like stepping into a deeply rooted
-            family tradition that had always been waiting for me. That is the exact passion I carry with me today.
-          </p>
+            family tradition that had always been waiting for me.</p>
 
-          <h3>Following the Flavor Across the Philippines</h3>
-          <p>Today, I'm based in Metro Manila, but I follow the food wherever it leads. As a home cook and passionate
-            food traveler, my journey takes me from hidden local spots in the city to out-of-town adventures across the
-            Philippines, and even beyond our borders.</p>
+          <h3>Following the Flavor</h3>
+          <p>Today, I'm based in Metro Manila, but I follow the food wherever it leads. My journey takes me from hidden
+            local spots in the city to out-of-town adventures across the Philippines, and even beyond our borders.</p>
 
-          <p>I am drawn to Filipino food culture above all—especially uncovering regional dishes and
-            the rich history behind how they came to be. But if there’s a new flavor waiting in any corner of the world,
-            I’ll never say no to trying it.</p>
+          <p>I am drawn to Filipino food culture above all — especially uncovering regional dishes and the rich history
+            behind how they came to be. But if there's a new flavor waiting in any corner of the world, I'll never say
+            no to trying it.</p>
 
           <h3>Welcome to Feed the Curious</h3>
-          <p>This website is my love letter. It is a tribute to Filipino food and culture, to the hidden gems worth
-            traveling hours for, to the quiet cafés that feel like a sanctuary in a busy day, and most importantly, to
-            every person behind the counter who has a story to tell.</p>
+          <p>This journal is my love letter. A tribute to Filipino food and culture, to the hidden gems worth traveling
+            hours for, to the quiet cafés that feel like a sanctuary, and most importantly, to every person behind the
+            counter who has a story to tell.</p>
 
           <p>Because every dish has a story. And I'm here to find it.</p>
-          <p>Welcome to my table. I'm so glad you're here.</p>
+          <p>Welcome to my table.</p>
 
           <div class="signature">Adryenne</div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <h2 style="font-family: var(--font-script); font-size: 32px; color: var(--secondary); margin-bottom: 5px;">Feed
-        the Curious</h2>
-      <p class="tagline" style="color: white; opacity: 0.8;">Food &middot; Coffee &middot; Culture &middot; Stories</p>
-      <div class="copyright">
-        &copy; 2026 Feed the Curious by Adryenne. All rights reserved.
-      </div>
+      <p class="footer-brand">Feed the Curious</p>
+      <p class="footer-tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+      <ul class="footer-nav">
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+      <div class="copyright">&copy; 2026 Feed the Curious by Adryenne. All rights reserved.</div>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
