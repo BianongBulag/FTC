@@ -1,0 +1,125 @@
+<h2>Feed the Curious — Improvements Spec</h2>
+<p class="subtitle">Review each section. Reply in terminal when ready to proceed.</p>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Goals</h3>
+  <ul style="margin-top:0.75rem; line-height:2.2; font-size:14px;">
+    <li>✓ Eliminate duplicate inline CSS across all pages</li>
+    <li>✓ Fix known bugs (empty navbar brand, missing CSS classes, duplicate JS)</li>
+    <li>✓ Make polaroid header usable on mobile (horizontal scroll strip)</li>
+    <li>✓ Add favicon + Open Graph meta tags</li>
+  </ul>
+  <p style="margin-top:0.75rem; font-size:13px; opacity:0.5;">Out of scope: dead links, new features, shared navbar/footer extraction</p>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Section 1 — CSS Consolidation</h3>
+  <p style="font-size:13px; margin-top:0.5rem;">Duplicate polaroid/header <code>&lt;style&gt;</code> block removed from every HTML file → lives in <code>styles.css</code> once.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;">
+    <div style="background:rgba(192,57,43,0.1); border-left:3px solid #c0392b; padding:0.75rem; border-radius:4px; font-size:12px; line-height:1.8;">
+      <strong style="color:#c0392b;">Removed from each page</strong><br>
+      &lt;style&gt; .site-header … .polaroid … .tape … &lt;/style&gt;<br>
+      .navbar .logo-text overrides<br>
+      .navbar .nav-links overrides
+    </div>
+    <div style="background:rgba(39,174,96,0.1); border-left:3px solid #27ae60; padding:0.75rem; border-radius:4px; font-size:12px; line-height:1.8;">
+      <strong style="color:#27ae60;">Added to styles.css</strong><br>
+      All polaroid/header rules<br>
+      .navbar--light modifier<br>
+      .section { padding: 80px 0 }<br>
+      .entry-link (same as .read-link)
+    </div>
+  </div>
+  <p style="font-size:12px; margin-top:0.75rem; opacity:0.6;">Affects: index.html, ulam.html, kape-corner.html, hunger-notes.html, about.html</p>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Section 2 — Bug Fixes</h3>
+  <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:0.75rem;">
+    <thead>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <th style="text-align:left; padding:8px 12px; opacity:0.5; font-weight:500;">File</th>
+        <th style="text-align:left; padding:8px 12px; opacity:0.5; font-weight:500;">Bug</th>
+        <th style="text-align:left; padding:8px 12px; opacity:0.5; font-weight:500;">Fix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px 12px; opacity:0.7;">All pages</td>
+        <td style="padding:8px 12px;">Navbar brand empty — nothing shows top-left</td>
+        <td style="padding:8px 12px; color:#27ae60;">Add "Feed the Curious" text</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px 12px; opacity:0.7;">All pages</td>
+        <td style="padding:8px 12px;">Duplicate hamburger JS listener</td>
+        <td style="padding:8px 12px; color:#27ae60;">Remove inline copy, keep app.js</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px 12px; opacity:0.7;">ulam.html</td>
+        <td style="padding:8px 12px;">Polaroid alt="" empty</td>
+        <td style="padding:8px 12px; color:#27ae60;">Add descriptive alt text</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 12px; opacity:0.7;">ulam.html</td>
+        <td style="padding:8px 12px;">Missing id="hamburger" on button</td>
+        <td style="padding:8px 12px; color:#27ae60;">Add id for consistency</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Section 3 — Mobile Polaroid</h3>
+  <p style="font-size:13px; margin-top:0.5rem;">At <code>max-width: 640px</code>: absolute collage → horizontal flex scroll strip. Pure CSS.</p>
+  <div style="display:flex; gap:2rem; margin-top:1rem; align-items:flex-start; flex-wrap:wrap;">
+    <div style="flex:1; min-width:160px;">
+      <p style="font-size:11px; opacity:0.5; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Desktop (unchanged)</p>
+      <div style="background:#d4cfc8; height:80px; position:relative; overflow:hidden; border-radius:4px;">
+        <div style="position:absolute;left:5%;top:20%;background:#ede8df;padding:3px 3px 10px;transform:rotate(-8deg);font-size:8px;width:40px;"><div style="width:34px;height:34px;background:#b0a898;"></div></div>
+        <div style="position:absolute;left:25%;top:10%;background:#ede8df;padding:3px 3px 10px;transform:rotate(5deg);font-size:8px;width:40px;z-index:2;"><div style="width:34px;height:34px;background:#b0a898;"></div></div>
+        <div style="position:absolute;left:45%;top:15%;background:#ede8df;padding:3px 3px 10px;transform:rotate(-6deg);font-size:8px;width:40px;"><div style="width:34px;height:34px;background:#b0a898;"></div></div>
+        <div style="position:absolute;left:65%;top:8%;background:#ede8df;padding:3px 3px 10px;transform:rotate(7deg);font-size:8px;width:40px;"><div style="width:34px;height:34px;background:#b0a898;"></div></div>
+        <div style="position:absolute;bottom:8px;left:8px;font-family:Georgia,serif;font-style:italic;font-size:11px;color:#7a5a3a;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#8b1a1a;"></div>
+      </div>
+    </div>
+    <div style="flex:1; min-width:140px; max-width:180px;">
+      <p style="font-size:11px; opacity:0.5; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Mobile &lt;640px (new)</p>
+      <div style="background:#d4cfc8; border-radius:4px; overflow:hidden;">
+        <div style="display:flex; overflow-x:auto; gap:6px; padding:12px 8px 8px; scrollbar-width:none;">
+          <div style="flex-shrink:0;background:#ede8df;padding:3px 3px 10px;transform:rotate(-3deg);"><div style="width:44px;height:44px;background:#b0a898;"></div></div>
+          <div style="flex-shrink:0;background:#ede8df;padding:3px 3px 10px;transform:rotate(4deg);margin-top:4px;"><div style="width:44px;height:44px;background:#b0a898;"></div></div>
+          <div style="flex-shrink:0;background:#ede8df;padding:3px 3px 10px;transform:rotate(-2deg);"><div style="width:44px;height:44px;background:#b0a898;"></div></div>
+          <div style="flex-shrink:0;background:#ede8df;padding:3px 3px 10px;transform:rotate(5deg);margin-top:2px;"><div style="width:44px;height:44px;background:#b0a898;"></div></div>
+          <div style="flex-shrink:0;background:#ede8df;padding:3px 3px 10px;transform:rotate(-4deg);"><div style="width:44px;height:44px;background:#b0a898;"></div></div>
+        </div>
+        <div style="padding:4px 8px 8px; position:relative;">
+          <div style="font-family:Georgia,serif;font-style:italic;font-size:11px;color:#7a5a3a;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#8b1a1a;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:2rem;">
+  <h3>Section 4 — Favicon + Open Graph</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:0.75rem; font-size:13px;">
+    <div style="background:rgba(255,255,255,0.05); padding:0.75rem; border-radius:4px;">
+      <strong>Favicon</strong><br>
+      <code style="font-size:11px;">&lt;link rel="icon" href="images/logo.png"&gt;</code><br>
+      <span style="opacity:0.5; font-size:12px;">Added to all pages — shows in browser tab</span>
+    </div>
+    <div style="background:rgba(255,255,255,0.05); padding:0.75rem; border-radius:4px;">
+      <strong>Open Graph</strong><br>
+      <span style="opacity:0.7; font-size:12px;">og:title · og:description · og:image</span><br>
+      <span style="opacity:0.5; font-size:12px;">Controls link preview when shared on social/iMessage</span>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:2.5rem; padding:1rem; background:rgba(39,174,96,0.1); border:1px solid rgba(39,174,96,0.3); border-radius:8px; font-size:14px;">
+  <strong>7 files touched total</strong> — styles.css, index.html, ulam.html, kape-corner.html, hunger-notes.html, about.html, .gitignore (done)
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Happy with this? Reply "approved" in terminal to start the implementation plan.</p>

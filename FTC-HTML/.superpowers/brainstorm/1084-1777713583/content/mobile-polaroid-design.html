@@ -1,0 +1,89 @@
+<h2>Section 3 — Mobile Polaroid: How it works</h2>
+<p class="subtitle">On screens under 640px, the absolute-position collage is replaced by a horizontal scroll strip.</p>
+
+<div class="split" style="margin-top:2rem; gap:1.5rem; align-items:start;">
+
+  <div class="mockup">
+    <div class="mockup-header">Desktop (unchanged)</div>
+    <div class="mockup-body" style="background:#d4cfc8; min-height:180px; position:relative; overflow:hidden;">
+      <!-- Simulated collage -->
+      <div style="position:absolute; left:2%; top:15%; transform:rotate(-8deg);">
+        <div style="background:#ede8df; padding:5px 5px 14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:70px;height:70px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="position:absolute; left:22%; top:8%; transform:rotate(5deg); z-index:2;">
+        <div style="background:#ede8df; padding:5px 5px 14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:70px;height:70px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="position:absolute; left:43%; top:12%; transform:rotate(-6deg);">
+        <div style="background:#ede8df; padding:5px 5px 14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:70px;height:70px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="position:absolute; left:63%; top:7%; transform:rotate(7deg);">
+        <div style="background:#ede8df; padding:5px 5px 14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:70px;height:70px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="position:absolute; left:83%; top:16%; transform:rotate(-5deg);">
+        <div style="background:#ede8df; padding:5px 5px 14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:70px;height:70px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:10px;left:16px;">
+        <div style="font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:20px;color:#7a5a3a;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+        <div style="font-size:8px;letter-spacing:3px;color:#7a5a3a;font-variant:small-caps;font-family:Georgia,serif;">Food · Coffee · Culture</div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#8b1a1a;"></div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">Mobile &lt;640px (new)</div>
+    <div class="mockup-body" style="background:#d4cfc8; width:200px; margin:0 auto;">
+      <!-- Scroll strip -->
+      <div style="overflow-x:auto; padding:20px 12px 12px; display:flex; gap:10px; scrollbar-width:none;">
+        <div style="flex-shrink:0; background:#ede8df; padding:5px 5px 14px; transform:rotate(-3deg); box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:80px;height:80px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="flex-shrink:0; background:#ede8df; padding:5px 5px 14px; transform:rotate(4deg); margin-top:8px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:80px;height:80px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="flex-shrink:0; background:#ede8df; padding:5px 5px 14px; transform:rotate(-2deg); box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:80px;height:80px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="flex-shrink:0; background:#ede8df; padding:5px 5px 14px; transform:rotate(5deg); margin-top:4px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:80px;height:80px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="flex-shrink:0; background:#ede8df; padding:5px 5px 14px; transform:rotate(-4deg); box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+          <div style="width:80px;height:80px;background:#b0a898;"></div>
+          <p style="font-size:7px;text-align:center;margin-top:5px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="padding:8px 12px 12px; position:relative;">
+        <div style="font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:16px;color:#7a5a3a;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+        <div style="font-size:7px;letter-spacing:2px;color:#7a5a3a;font-variant:small-caps;font-family:Georgia,serif;margin-top:3px;">Food · Coffee · Culture</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#8b1a1a;"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:2rem; padding:1rem; background:rgba(255,255,255,0.05); border-radius:8px; font-size:14px; line-height:2;">
+  <strong>How it's implemented:</strong><br>
+  CSS <code>@media (max-width: 640px)</code> switches <code>.photos-collage</code> from <code>position:absolute</code> to <code>display:flex; overflow-x:auto</code>. Polaroids shrink to ~100px wide. Title moves below the strip. No JS needed.
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Does this look right? Reply in terminal.</p>

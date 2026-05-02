@@ -1,0 +1,68 @@
+<h2>Polaroid header on mobile — what should happen?</h2>
+<p class="subtitle">Right now the 5-photo collage uses fixed pixel positions — it breaks on small screens. Pick the mobile treatment you prefer.</p>
+
+<div class="cards" style="margin-top:2rem">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a1a; padding:1rem; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+      <!-- Horizontal scroll strip of 3 small polaroids -->
+      <div style="display:flex; gap:10px; overflow:hidden; width:100%;">
+        <div style="background:#ede8df; padding:6px 6px 16px; transform:rotate(-3deg); flex-shrink:0; width:90px;">
+          <div style="width:78px;height:78px;background:#b0a898;"></div>
+          <p style="font-size:8px;text-align:center;margin-top:6px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="background:#ede8df; padding:6px 6px 16px; transform:rotate(4deg); flex-shrink:0; width:90px; margin-top:8px;">
+          <div style="width:78px;height:78px;background:#b0a898;"></div>
+          <p style="font-size:8px;text-align:center;margin-top:6px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="background:#ede8df; padding:6px 6px 16px; transform:rotate(-2deg); flex-shrink:0; width:90px;">
+          <div style="width:78px;height:78px;background:#b0a898;"></div>
+          <p style="font-size:8px;text-align:center;margin-top:6px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+        <div style="background:#ede8df; padding:6px 6px 16px; transform:rotate(5deg); flex-shrink:0; width:90px; margin-top:4px;">
+          <div style="width:78px;height:78px;background:#b0a898;"></div>
+          <p style="font-size:8px;text-align:center;margin-top:6px;color:#5c4a2a;font-family:cursive;">caption</p>
+        </div>
+      </div>
+      <div style="color:#7a5a3a;font-family:Georgia,serif;font-style:italic;font-size:18px;font-weight:bold;margin-top:8px;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+    </div>
+    <div class="card-body">
+      <h3>A — Horizontal scroll strip</h3>
+      <p>All polaroids kept, shrunk, scrollable sideways. Preserves the collage feel on mobile.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a1a; padding:1rem; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+      <!-- Single hero polaroid centered -->
+      <div style="background:#ede8df; padding:8px 8px 20px; transform:rotate(-2deg); width:130px;">
+        <div style="width:114px;height:114px;background:#b0a898;"></div>
+        <p style="font-size:9px;text-align:center;margin-top:8px;color:#5c4a2a;font-family:cursive;">local Vietnamese food haunt</p>
+      </div>
+      <div style="color:#7a5a3a;font-family:Georgia,serif;font-style:italic;font-size:18px;font-weight:bold;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+      <div style="color:#7a5a3a;font-size:10px;letter-spacing:3px;font-variant:small-caps;font-family:Georgia,serif;">Food · Coffee · Culture</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Single featured polaroid</h3>
+      <p>Show only one polaroid centered. Clean, focused. Rotates on each page load (random pick).</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a1a; padding:1rem; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+      <!-- Text-only header on mobile -->
+      <div style="text-align:center;">
+        <div style="color:#7a5a3a;font-family:Georgia,serif;font-style:italic;font-size:26px;font-weight:bold;line-height:1;">Feed the <span style="color:#8b1a1a;">Curious</span></div>
+        <div style="color:#7a5a3a;font-size:10px;letter-spacing:4px;font-variant:small-caps;font-family:Georgia,serif;margin-top:6px;">Food · Coffee · Culture · Stories</div>
+        <div style="width:36px;height:2px;background:#8b1a1a;margin:12px auto 0;"></div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Text-only on mobile</h3>
+      <p>Skip photos entirely on small screens. Fast, clean, editorial. Photos only on desktop.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Click to select, then let me know in the terminal.</p>

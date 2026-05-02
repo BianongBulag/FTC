@@ -1,0 +1,41 @@
+<h2>Navbar brand — top-left of every page</h2>
+<p class="subtitle">Right now the navbar brand slot is empty — nothing shows in the top-left corner. Pick what should go there.</p>
+
+<div class="cards" style="margin-top:2rem">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#2e2e30; padding:1rem; min-height:80px; display:flex; align-items:center;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="https://via.placeholder.com/36x36/808080/808080" style="height:36px;width:36px;border-radius:4px;" alt="">
+        <span style="font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:18px;color:#fff;">Feed the Curious</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Logo image + site name</h3>
+      <p>Uses logo.png (already in /images) beside the italic site name. Best brand recognition.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#2e2e30; padding:1rem; min-height:80px; display:flex; align-items:center;">
+      <span style="font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:18px;color:#fff;">Feed the Curious</span>
+    </div>
+    <div class="card-body">
+      <h3>B — Text only</h3>
+      <p>Just the italic site name. Clean, minimal, no image dependency.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#2e2e30; padding:1rem; min-height:80px; display:flex; align-items:center;">
+      <img src="https://via.placeholder.com/36x36/808080/808080" style="height:36px;width:36px;border-radius:4px;" alt="Feed the Curious">
+    </div>
+    <div class="card-body">
+      <h3>C — Logo image only</h3>
+      <p>Icon only. Compact. Works well if the logo is recognizable on its own.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Click to select, then confirm in the terminal.</p>

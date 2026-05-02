@@ -1,0 +1,71 @@
+<h2>Section 1 — CSS Consolidation</h2>
+<p class="subtitle">Same styles are copy-pasted into every page's &lt;style&gt; block. Moving them to styles.css once.</p>
+
+<div class="split" style="margin-top:2rem; gap: 1.5rem;">
+
+  <div class="mockup">
+    <div class="mockup-header" style="background:#c0392b;">❌ Before (current state)</div>
+    <div class="mockup-body" style="font-family:monospace; font-size:12px; line-height:1.8;">
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(255,0,0,0.08); border-left:3px solid #c0392b; border-radius:4px;">
+        <strong>index.html</strong><br>
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;.site-header { … }<br>
+        &nbsp;&nbsp;.polaroid { … }<br>
+        &nbsp;&nbsp;.tape { … }<br>
+        &nbsp;&nbsp;.photo-wrap { … }<br>
+        &nbsp;&nbsp;.header-title { … }<br>
+        &nbsp;&nbsp;<em>+ 8 more rules</em><br>
+        &lt;/style&gt;
+      </div>
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(255,0,0,0.08); border-left:3px solid #c0392b; border-radius:4px;">
+        <strong>ulam.html</strong> — exact same block ↑
+      </div>
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(255,0,0,0.08); border-left:3px solid #c0392b; border-radius:4px;">
+        <strong>kape-corner.html</strong> — exact same block ↑
+      </div>
+      <div style="padding:0.75rem; background:rgba(255,0,0,0.08); border-left:3px solid #c0392b; border-radius:4px;">
+        <strong>hunger-notes.html</strong> — exact same block ↑
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header" style="background:#27ae60;">✓ After (proposed)</div>
+    <div class="mockup-body" style="font-family:monospace; font-size:12px; line-height:1.8;">
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(0,200,0,0.08); border-left:3px solid #27ae60; border-radius:4px;">
+        <strong>styles.css</strong> (one place)<br>
+        .site-header { … }<br>
+        .polaroid { … }<br>
+        .tape { … }<br>
+        .photo-wrap { … }<br>
+        .header-title { … }<br>
+        .navbar--light { … } <span style="color:#888;">← new modifier</span><br>
+        .section { … } <span style="color:#888;">← was missing</span><br>
+        .entry-link { … } <span style="color:#888;">← was missing</span>
+      </div>
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(0,200,0,0.08); border-left:3px solid #27ae60; border-radius:4px;">
+        <strong>index.html</strong><br>
+        <span style="color:#27ae60;">no &lt;style&gt; block</span> · links styles.css ✓
+      </div>
+      <div style="margin-bottom:1rem; padding:0.75rem; background:rgba(0,200,0,0.08); border-left:3px solid #27ae60; border-radius:4px;">
+        <strong>ulam.html</strong><br>
+        <span style="color:#27ae60;">no &lt;style&gt; block</span> · links styles.css ✓
+      </div>
+      <div style="padding:0.75rem; background:rgba(0,200,0,0.08); border-left:3px solid #27ae60; border-radius:4px;">
+        <strong>all other pages</strong> — same ✓
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:2rem; padding:1rem; background:rgba(255,255,255,0.05); border-radius:8px;">
+  <h3 style="margin-bottom:0.75rem;">What this means</h3>
+  <ul style="line-height:2; font-size:14px;">
+    <li>Change polaroid style once → all pages update automatically</li>
+    <li>Each HTML file gets smaller and easier to read</li>
+    <li>No more drift where one page looks slightly different from another</li>
+  </ul>
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Does this look right? Reply in terminal.</p>

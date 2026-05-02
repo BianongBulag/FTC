@@ -498,17 +498,19 @@ img {
 
 .about-strip .container {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 80px;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
   align-items: center;
 }
 
 .about-strip-img {
-  width: 100%;
-  aspect-ratio: 4/5;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
   object-fit: cover;
-  object-position: top;
+  object-position: 60% 40%;
   filter: grayscale(40%);
+  flex-shrink: 0;
 }
 
 .about-strip-text {}
@@ -663,7 +665,7 @@ img {
 @media (max-width: 900px) {
   .duo-grid { grid-template-columns: 1fr; }
   .about-strip .container { grid-template-columns: 1fr; gap: 36px; }
-  .about-strip-img { aspect-ratio: 3/2; max-height: 300px; width: 100%; }
+  .about-strip-img { width: 200px; height: 200px; margin: 0 auto; }
   .feature-content { padding: 40px 32px; }
 }
 

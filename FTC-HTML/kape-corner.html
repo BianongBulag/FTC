@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kape Corner | Feed the Curious</title>
-  <meta name="description" content="Coffee stories, cafe reviews, and finding stillness in a cup by Adryenne.">
+  <title>Kape Corner — Layout Preview | Feed the Curious</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap">
   <style>
     body {
-      background-color: #d4cfc8;
+      background-color: #cec5b5;
       background-image: url('images/texture-bg.jpg');
       background-size: cover;
       background-position: center;
@@ -22,38 +21,240 @@
     .navbar .hamburger   { color: var(--black); }
 
     .site-header { position: relative; width: 100%; height: 520px; overflow: hidden; margin-top: 60px; }
-    .photos-collage { position: absolute; inset: 0; z-index: 1; }
-    .photo-wrap { position: absolute; }
-    .photo-wrap:nth-child(1) { left: calc(50% - 675px); top: 12%; transform: rotate(-8deg); z-index: 2; }
-    .photo-wrap:nth-child(2) { left: calc(50% - 395px); top: 6%;  transform: rotate(5deg);  z-index: 3; }
-    .photo-wrap:nth-child(3) { left: calc(50% - 125px); top: 10%; transform: rotate(-6deg); z-index: 2; }
-    .photo-wrap:nth-child(4) { left: calc(50% + 145px); top: 5%;  transform: rotate(7deg);  z-index: 2; }
-    .photo-wrap:nth-child(5) { left: calc(50% + 415px); top: 14%; transform: rotate(-5deg); z-index: 1; }
-
-    .tape {
-      position: absolute; top: -11px; left: 50%; width: 66px; height: 19px; z-index: 2;
-      background: linear-gradient(to bottom, rgba(190,170,130,0.42), rgba(215,196,155,0.60), rgba(190,170,130,0.42));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-    }
-    .photo-wrap:nth-child(1) .tape { transform: translateX(-50%) rotate( 9deg); }
-    .photo-wrap:nth-child(2) .tape { transform: translateX(-50%) rotate(-6deg); }
-    .photo-wrap:nth-child(3) .tape { transform: translateX(-50%) rotate( 7deg); }
-    .photo-wrap:nth-child(4) .tape { transform: translateX(-50%) rotate(-8deg); }
-    .photo-wrap:nth-child(5) .tape { transform: translateX(-50%) rotate( 5deg); }
-
-    .polaroid { background: #EDE8DF; padding: 10px 10px 14px 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.09); }
-    .polaroid img { display: block; width: 240px; height: 240px; object-fit: cover; }
-    .polaroid-caption { font-family: 'Caveat', cursive; font-size: 15px; font-weight: 500; color: #5C4A2A; text-align: center; margin-top: 10px; margin-bottom: 6px; line-height: 1.2; padding: 0 4px; }
+    .page-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 5; }
     .header-text { position: absolute; bottom: 18px; left: 48px; z-index: 10; }
-    .header-title { font-style: italic; font-weight: bold; font-size: 50px; line-height: 1; color: #7A5A3A; font-family: Georgia, 'Times New Roman', serif; }
-    .header-title .red { color: #8B1A1A; }
-    .header-tagline { margin-top: 5px; font-size: 17px; font-variant: small-caps; letter-spacing: 4.5px; color: #7A5A3A; font-family: Georgia, 'Times New Roman', serif; }
+    .header-title { font-style: italic; font-weight: bold; font-size: 50px; line-height: 1; color: #fff; font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .header-title .red { color: #E87070; }
+    .header-tagline { margin-top: 5px; font-size: 17px; font-variant: small-caps; letter-spacing: 4.5px; color: rgba(255,255,255,0.85); font-family: Georgia, 'Times New Roman', serif; }
     .header-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #8B1A1A; z-index: 10; }
 
-    .kape-grid {
+    :root {
+      --k-card:    #f2e8d5;
+      --k-border:  #c9ae84;
+      --k-shadow:  rgba(101, 67, 33, 0.18);
+      --k-title:   #2e1a0e;
+      --k-body:    #5c3d28;
+      --k-muted:   #927a60;
+      --k-accent:  #8B1A1A;
+      --k-link:    #7a2e0e;
+    }
+
+    .kape-section { padding: 52px 0 72px; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--k-muted);
+      font-family: Georgia, serif;
+      margin-bottom: 18px;
+    }
+
+    /* --- Featured card --- */
+    .featured-card {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 36px;
+      grid-template-columns: 1.15fr 1fr;
+      background: var(--k-card);
+      border: 1px solid var(--k-border);
+      box-shadow: 5px 6px 22px var(--k-shadow), 1px 1px 0 #d4b896;
+      overflow: hidden;
+      margin-bottom: 52px;
+    }
+
+    .featured-img {
+      position: relative;
+      min-height: 440px;
+      overflow: hidden;
+    }
+
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+
+    .featured-card:hover .featured-img img { transform: scale(1.03); }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--k-title);
+      color: var(--k-card);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      font-family: Georgia, serif;
+    }
+
+    .featured-body {
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .stamp-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--k-accent);
+      border: 1.5px solid var(--k-accent);
+      padding: 3px 9px;
+      font-family: Georgia, serif;
+    }
+
+    .card-date {
+      font-size: 11px;
+      color: var(--k-muted);
+      font-style: italic;
+      font-family: Georgia, serif;
+    }
+
+    .featured-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 40px;
+      line-height: 1.15;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--k-title);
+      margin: 0 0 20px 0;
+    }
+
+    .featured-excerpt {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--k-body);
+      margin: 0 0 30px 0;
+      font-family: Georgia, serif;
+    }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--k-link);
+      text-decoration: none;
+      font-family: Georgia, serif;
+      border-bottom: 1.5px solid var(--k-link);
+      padding-bottom: 2px;
+      width: fit-content;
+      transition: gap 0.2s ease;
+    }
+
+    .read-link:hover { gap: 14px; }
+
+    /* --- Masonry divider label --- */
+    .masonry-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--k-muted);
+      font-family: Georgia, serif;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--k-border);
+      margin-bottom: 28px;
+    }
+
+    /* --- Masonry grid --- */
+    .masonry-grid {
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .kape-card {
+      break-inside: avoid;
+      background: var(--k-card);
+      border: 1px solid var(--k-border);
+      box-shadow: 3px 4px 16px var(--k-shadow);
+      margin-bottom: 28px;
+      overflow: hidden;
+      display: block;
+    }
+
+    .kape-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .kape-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .kape-card:hover .kape-card-img img { transform: scale(1.04); }
+
+    .kape-card-body { padding: 26px 28px 32px; }
+
+    .kape-card-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 23px;
+      line-height: 1.25;
+      font-weight: bold;
+      font-style: italic;
+      color: var(--k-title);
+      margin: 0 0 12px 0;
+    }
+
+    .kape-card-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .kape-card-title a:hover { color: var(--k-accent); }
+
+    .kape-card-excerpt {
+      font-size: 14px;
+      line-height: 1.72;
+      color: var(--k-body);
+      margin: 0 0 22px 0;
+      font-family: Georgia, serif;
+    }
+
+    .card-read-link {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--k-link);
+      text-decoration: none;
+      font-family: Georgia, serif;
+      border-bottom: 1px solid var(--k-link);
+      padding-bottom: 1px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img  { min-height: 280px; }
+      .featured-body { padding: 30px 26px 36px; }
+      .featured-title { font-size: 29px; }
+      .masonry-grid  { columns: 1; }
     }
   </style>
 </head>
@@ -64,6 +265,7 @@
     <div class="container">
       <a href="index.html" class="navbar-brand"></a>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="hunger-notes.html">Hunger Notes</a></li>
         <li><a href="kape-corner.html" class="active">Kape Corner</a></li>
         <li><a href="about.html">About Me</a></li>
@@ -73,43 +275,8 @@
   </nav>
 
   <header class="site-header">
-    <div class="photos-collage">
-      <div class="photo-wrap">
-        <div class="tape"></div>
-        <div class="polaroid">
-          <img src="images/feed-the-curious-ayenne-header01.JPG" alt="">
-          <p class="polaroid-caption">local Vietnamese food haunt</p>
-        </div>
-      </div>
-      <div class="photo-wrap">
-        <div class="tape"></div>
-        <div class="polaroid">
-          <img src="images/feed-the-curious-ayenne-header02.JPG" alt="">
-          <p class="polaroid-caption">January 9, 2026 - First Date</p>
-        </div>
-      </div>
-      <div class="photo-wrap">
-        <div class="tape"></div>
-        <div class="polaroid">
-          <img src="images/feed-the-curious-ayenne-header04.JPG" alt="">
-          <p class="polaroid-caption">morning coffee while waiting for the bus</p>
-        </div>
-      </div>
-      <div class="photo-wrap">
-        <div class="tape"></div>
-        <div class="polaroid">
-          <img src="images/feed-the-curious-ayenne-header03.JPG" alt="">
-          <p class="polaroid-caption">at a hidden art café</p>
-        </div>
-      </div>
-      <div class="photo-wrap">
-        <div class="tape"></div>
-        <div class="polaroid">
-          <img src="images/feed-the-curious-ayenne-header05.JPG" alt="">
-          <p class="polaroid-caption">cozy japanese resto</p>
-        </div>
-      </div>
-    </div>
+    <img class="page-hero-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1600" alt="Kape Corner">
+    <div class="hero-overlay"></div>
     <div class="header-text">
       <h1 class="header-title">Kape <span class="red">Corner</span></h1>
       <p class="header-tagline">a quiet space</p>
@@ -117,59 +284,63 @@
     <div class="header-rule"></div>
   </header>
 
-  <section class="section">
+  <section class="kape-section">
     <div class="container">
-      <div class="kape-grid">
 
-        <article class="entry-card">
-          <div class="entry-img">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800" alt="Pour over coffee">
-          </div>
-          <div class="entry-body">
-            <div class="entry-meta">
-              <span class="entry-category">Café Reviews</span>
-              <span class="entry-dot"></span>
-              <span class="entry-date">Oct 08, 2026</span>
-            </div>
-            <h3><a href="kape-corner-post-template.html">Finding Stillness in a Pour-Over</a></h3>
-            <p>Reviewing that hidden neighborhood cafe where the barista takes 10 minutes to serve your coffee, and why it's absolutely worth the wait.</p>
-            <a href="kape-corner-post-template.html" class="entry-link">Read the entry</a>
-          </div>
-        </article>
+      <p class="section-eyebrow">Latest Entry</p>
 
-        <article class="entry-card">
-          <div class="entry-img">
+      <div class="featured-card">
+        <div class="featured-img">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1200" alt="Pour over coffee">
+          <span class="featured-badge">Featured</span>
+        </div>
+        <div class="featured-body">
+          <div class="card-eyebrow">
+            <span class="stamp-tag">Café Reviews</span>
+            <span class="card-date">Oct 08, 2026</span>
+          </div>
+          <h2 class="featured-title">Finding Stillness in a Pour-Over</h2>
+          <p class="featured-excerpt">Reviewing that hidden neighborhood cafe where the barista takes 10 minutes to serve your coffee, and why it's absolutely worth the wait.</p>
+          <a href="kape-corner-post-template.html" class="read-link">Read the entry &rarr;</a>
+        </div>
+      </div>
+
+      <p class="masonry-label">More Stories</p>
+
+      <div class="masonry-grid">
+
+        <article class="kape-card">
+          <div class="kape-card-img">
             <img src="images/barako.jpg" alt="Kapeng Barako beans">
           </div>
-          <div class="entry-body">
-            <div class="entry-meta">
-              <span class="entry-category">Coffee Culture</span>
-              <span class="entry-dot"></span>
-              <span class="entry-date">Oct 05, 2026</span>
+          <div class="kape-card-body">
+            <div class="card-eyebrow">
+              <span class="stamp-tag">Coffee Culture</span>
+              <span class="card-date">Oct 05, 2026</span>
             </div>
-            <h3><a href="#">The Magic of Kapeng Barako</a></h3>
-            <p>Exploring the strong, unapologetic flavor of Batangas' famous Liberica beans. More than a morning jolt — a testament to Filipino resilience.</p>
-            <a href="#" class="entry-link">Read the entry</a>
+            <h3 class="kape-card-title"><a href="#">The Magic of Kapeng Barako</a></h3>
+            <p class="kape-card-excerpt">Exploring the strong, unapologetic flavor of Batangas' famous Liberica beans. More than a morning jolt — a testament to Filipino resilience.</p>
+            <a href="#" class="card-read-link">Read the entry</a>
           </div>
         </article>
 
-        <article class="entry-card">
-          <div class="entry-img">
+        <article class="kape-card">
+          <div class="kape-card-img">
             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Cafe interior">
           </div>
-          <div class="entry-body">
-            <div class="entry-meta">
-              <span class="entry-category">Coffee Stories</span>
-              <span class="entry-dot"></span>
-              <span class="entry-date">Sep 22, 2026</span>
+          <div class="kape-card-body">
+            <div class="card-eyebrow">
+              <span class="stamp-tag">Coffee Stories</span>
+              <span class="card-date">Sep 22, 2026</span>
             </div>
-            <h3><a href="#">Rainy Days and Spanish Lattes</a></h3>
-            <p>Why the sweetness of condensed milk in espresso is the ultimate comfort drink during monsoon season. A look back at my afternoon at a local roastery.</p>
-            <a href="#" class="entry-link">Read the entry</a>
+            <h3 class="kape-card-title"><a href="#">Rainy Days and Spanish Lattes</a></h3>
+            <p class="kape-card-excerpt">Why the sweetness of condensed milk in espresso is the ultimate comfort drink during monsoon season. A look back at my afternoon at a local roastery.</p>
+            <a href="#" class="card-read-link">Read the entry</a>
           </div>
         </article>
 
       </div>
+
     </div>
   </section>
 
@@ -196,6 +367,6 @@
       document.querySelector('.nav-links').classList.toggle('active');
     });
   </script>
-</body>
 
+</body>
 </html>

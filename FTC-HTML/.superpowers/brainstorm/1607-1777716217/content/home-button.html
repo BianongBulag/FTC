@@ -1,0 +1,48 @@
+<h2>Home nav link — before vs after</h2>
+<p class="subtitle">Adding "Home" as the first item in the navigation bar on all pages.</p>
+
+<div class="split" style="margin-top:2rem; gap:1.5rem;">
+
+  <div class="mockup">
+    <div class="mockup-header" style="background:#c0392b;">Before (current)</div>
+    <div class="mockup-body" style="padding:0;">
+      <!-- Navbar simulation -->
+      <div style="background:rgba(46,46,48,0.95); padding:16px 28px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:Georgia,serif;font-style:italic;font-size:16px;color:#fff;opacity:0.3;">[no brand]</span>
+        <div style="display:flex;gap:28px;">
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Hunger Notes</span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Kape Corner</span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">About Me</span>
+        </div>
+      </div>
+      <div style="padding:1rem;font-size:13px;opacity:0.5;">No way to get back to the home page from nav links.</div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header" style="background:#27ae60;">After (proposed)</div>
+    <div class="mockup-body" style="padding:0;">
+      <!-- Navbar simulation with Home -->
+      <div style="background:rgba(46,46,48,0.95); padding:16px 28px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:Georgia,serif;font-style:italic;font-size:16px;color:#fff;opacity:0.3;">[no brand]</span>
+        <div style="display:flex;gap:28px;">
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#C51D34;border-bottom:1px solid #C51D34;padding-bottom:2px;">Home</span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Hunger Notes</span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Kape Corner</span>
+          <span style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);">About Me</span>
+        </div>
+      </div>
+      <div style="padding:1rem;font-size:13px;opacity:0.7;">On inner pages: "Home" links back to index.html.<br>On the home page itself: "Home" is highlighted as active.</div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:2rem;padding:1rem;background:rgba(255,255,255,0.05);border-radius:8px;font-size:13px;line-height:2;">
+  <strong>What changes in the HTML:</strong><br>
+  Add one line to each page's <code>&lt;ul class="nav-links"&gt;</code>:<br>
+  <code style="color:#27ae60;">&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;</code> — as the first item<br>
+  On <code>index.html</code> specifically: <code style="color:#27ae60;">&lt;a href="index.html" class="active"&gt;Home&lt;/a&gt;</code>
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem">Does this look right? Reply in terminal.</p>
