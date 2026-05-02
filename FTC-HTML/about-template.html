@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Feed the Curious</title>
+  <meta name="description" content="Meet Adryenne, the curator of Feed the Curious.">
+  <link rel="icon" href="images/Kamusta.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap">
+  <style>
+    body {
+      background-color: #d4cfc8;
+      background-image: url('images/texture-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .navbar .logo-text   { color: var(--black); }
+    .navbar .nav-links a { color: #8B1A1A; }
+    .navbar .hamburger   { color: var(--black); }
+
+    .site-header { position: relative; width: 100%; height: 520px; overflow: hidden; margin-top: 60px; }
+    .page-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 5; }
+    .header-text { position: absolute; bottom: 18px; left: 48px; z-index: 10; }
+    .header-title { font-style: italic; font-weight: bold; font-size: 50px; line-height: 1; color: #7A5A3A; font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .header-title .red { color: #8B1A1A; }
+    .header-tagline { margin-top: 5px; font-size: 17px; font-variant: small-caps; letter-spacing: 4.5px; color: rgba(255,255,255,0.85); font-family: Georgia, 'Times New Roman', serif; }
+    .header-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #8B1A1A; z-index: 10; }
+
+    .content-narrow {
+      max-width: 760px;
+      margin: 0 auto 80px;
+      background: var(--white);
+      padding: 64px 72px;
+      border-top: 3px solid var(--red);
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 20px 60px rgba(46,46,48,0.07);
+    }
+
+    .bio-title { margin-bottom: 44px; }
+    .bio-title h1 { font-size: 48px; font-style: italic; color: var(--black); margin-bottom: 0; }
+
+    .bio-content h3 {
+      font-family: var(--font-heading); font-size: 22px; font-style: italic;
+      color: var(--black); margin-top: 44px; margin-bottom: 16px;
+      padding-top: 24px; border-top: 1px solid var(--border);
+    }
+
+    .bio-content img.inline-img { width: 100%; margin: 32px 0; display: block; }
+
+    .bio-content p { font-size: 17px; line-height: 1.85; margin-bottom: 24px; color: var(--black); }
+
+    .bio-content p:first-of-type::first-letter {
+      font-family: var(--font-heading); font-size: 64px; font-weight: 700;
+      color: var(--red); float: left; line-height: 0.85;
+      padding-right: 14px; margin-top: 6px;
+    }
+
+    .signature { font-family: var(--font-script); font-size: 40px; color: var(--red); margin-top: 48px; text-align: right; }
+
+    @media (max-width: 768px) {
+      .content-narrow { margin: 0 16px 60px; padding: 40px 28px; }
+      .bio-title h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <header class="site-header">
+    <img class="page-hero-img" src="images/feed-the-curious-ayenne-about.JPG" alt="About Me">
+    <div class="hero-overlay"></div>
+    <div class="header-text">
+      <h1 class="header-title">About <span class="red">Feed the Curious</span></h1>
+      <p class="header-tagline">the person behind the journal</p>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <section style="padding-top: 48px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="content-narrow">
+
+        <div class="bio-title">
+          <span class="script-text">Mabuhay!</span>
+          <h1>I'm Adryenne.</h1>
+        </div>
+
+        <div class="bio-content">
+          <p>My love for food didn't start in a fancy restaurant or a trendy multi-roaster café. It started in a small
+            family restaurant in the province called <strong>Everlasting</strong>, where my grandfather and mother
+            cooked authentic Filipino food with nothing but heart, fire, and a traditional <em>pugon</em> fueled by
+            <em>ipa</em> that never seemed to go cold.
+          </p>
+
+          <img src="images/everlasting.png" alt="Everlasting Restaurant Pencil Sketch" class="inline-img">
+
+          <h3>Cooking with Heart</h3>
+          <p>I grew up in that kitchen long before I was tall enough to reach the stove. At six or seven years old, I
+            was already helping serve food to customers. I watched my grandfather and mother carefully simmer beloved
+            classics like <em>menudo, afritada, adobo,</em> and <em>kare-kare</em>, and masterfully stir massive batches
+            of <em>lomi</em> and <em>pancit guisado</em> for everyone from everyday regulars to entire wedding
+            celebrations.</p>
+
+          <p>Food, in our family, was never just a meal. It was how we showed up for people.</p>
+
+          <p>By high school, I was finally behind the stove myself. The very first dish I ever cooked was our signature
+            <em>lomi</em>. That moment felt less like learning a skill, and more like stepping into a deeply rooted
+            family tradition that had always been waiting for me.</p>
+
+          <h3>Following the Flavor</h3>
+          <p>Today, I'm based in Metro Manila, but I follow the food wherever it leads. My journey takes me from hidden
+            local spots in the city to out-of-town adventures across the Philippines, and even beyond our borders.</p>
+
+          <p>I am drawn to Filipino food culture above all — especially uncovering regional dishes and the rich history
+            behind how they came to be. But if there's a new flavor waiting in any corner of the world, I'll never say
+            no to trying it.</p>
+
+          <h3>Welcome to Feed the Curious</h3>
+          <p>This journal is my love letter. A tribute to Filipino food and culture, to the hidden gems worth traveling
+            hours for, to the quiet cafés that feel like a sanctuary, and most importantly, to every person behind the
+            counter who has a story to tell.</p>
+
+          <p>Because every dish has a story. And I'm here to find it.</p>
+          <p>Welcome to my table.</p>
+
+          <div class="signature">Adryenne</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-brand">Feed the Curious</p>
+      <p class="footer-tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+      <ul class="footer-nav">
+        <li><a href="hunger-notes.html">Hunger Notes</a></li>
+        <li><a href="kape-corner.html">Kape Corner</a></li>
+        <li><a href="about.html">About Me</a></li>
+      </ul>
+      <div class="copyright">&copy; 2026 Feed the Curious by Adryenne. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>

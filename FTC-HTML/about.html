@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Feed the Curious</title>
   <meta name="description" content="Meet Adryenne, the curator of Feed the Curious.">
+  <link rel="icon" href="images/Kamusta.jpg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap">
   <style>
@@ -18,18 +19,119 @@
     }
 
     .navbar .logo-text   { color: var(--black); }
-    .navbar .nav-links a { color: var(--grey); }
+    .navbar .nav-links a { color: #8B1A1A; }
     .navbar .hamburger   { color: var(--black); }
 
-    .site-header { position: relative; width: 100%; height: 520px; overflow: hidden; margin-top: 60px; }
-    .page-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 5; }
-    .header-text { position: absolute; bottom: 18px; left: 48px; z-index: 10; }
-    .header-title { font-style: italic; font-weight: bold; font-size: 50px; line-height: 1; color: #fff; font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
-    .header-title .red { color: #E87070; }
-    .header-tagline { margin-top: 5px; font-size: 17px; font-variant: small-caps; letter-spacing: 4.5px; color: rgba(255,255,255,0.85); font-family: Georgia, 'Times New Roman', serif; }
-    .header-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #8B1A1A; z-index: 10; }
+    /* ── HEADER ──────────────────────────────────────────────── */
+    .site-header {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      margin-top: 60px;
+    }
 
+    /* ── SINGLE WIDE POLAROID ────────────────────────────────── */
+    .photos-collage {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .photo-wrap {
+      position: absolute;
+      top: 7%;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      z-index: 2;
+    }
+
+    /* ── TAPE ─────────────────────────────────────────────────── */
+    .tape {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%) rotate(3deg);
+      width: 88px;
+      height: 19px;
+      z-index: 2;
+      background: linear-gradient(
+        to bottom,
+        rgba(190,170,130,0.42),
+        rgba(215,196,155,0.60),
+        rgba(190,170,130,0.42)
+      );
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    /* ── POLAROID FRAME ──────────────────────────────────────── */
+    .polaroid {
+      background: #EDE8DF;
+      padding: 10px 10px 36px 10px;
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.18),
+        0 2px 4px  rgba(0,0,0,0.09);
+    }
+
+    .polaroid img {
+      display: block;
+      width: 600px;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .polaroid-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 500;
+      color: #5C4A2A;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+      padding: 0 4px;
+    }
+
+    /* ── TITLE ───────────────────────────────────────────────── */
+    .header-text {
+      position: absolute;
+      bottom: 18px;
+      left: 48px;
+      z-index: 10;
+    }
+
+    .header-title {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 50px;
+      line-height: 1;
+      color: #7A5A3A;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .header-title .red { color: #8B1A1A; }
+
+    .header-tagline {
+      margin-top: 5px;
+      font-size: 17px;
+      font-variant: small-caps;
+      letter-spacing: 4.5px;
+      color: #7A5A3A;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    /* ── CRIMSON BOTTOM RULE ─────────────────────────────────── */
+    .header-rule {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #8B1A1A;
+      z-index: 10;
+    }
+
+    /* ── CONTENT ─────────────────────────────────────────────── */
     .content-narrow {
       max-width: 760px;
       margin: 0 auto 80px;
@@ -41,9 +143,6 @@
       box-shadow: 0 20px 60px rgba(46,46,48,0.07);
     }
 
-    .bio-title { margin-bottom: 44px; }
-    .bio-title h1 { font-size: 48px; font-style: italic; color: var(--black); margin-bottom: 0; }
-
     .bio-content h3 {
       font-family: var(--font-heading); font-size: 22px; font-style: italic;
       color: var(--black); margin-top: 44px; margin-bottom: 16px;
@@ -52,7 +151,7 @@
 
     .bio-content img.inline-img { width: 100%; margin: 32px 0; display: block; }
 
-    .bio-content p { font-size: 17px; line-height: 1.85; margin-bottom: 24px; color: var(--black); }
+    .bio-content p { font-size: 14px; line-height: 1.85; margin-bottom: 24px; color: var(--black); }
 
     .bio-content p:first-of-type::first-letter {
       font-family: var(--font-heading); font-size: 64px; font-weight: 700;
@@ -60,11 +159,28 @@
       padding-right: 14px; margin-top: 6px;
     }
 
-    .signature { font-family: var(--font-script); font-size: 40px; color: var(--red); margin-top: 48px; text-align: right; }
+    .img-caption {
+      font-family: var(--font-body);
+      font-size: 8px;
+      font-style: italic;
+      color: var(--black);
+      margin-top: -24px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .contact-email {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #7A5A3A;
+      margin-top: 32px;
+    }
 
     @media (max-width: 768px) {
       .content-narrow { margin: 0 16px 60px; padding: 40px 28px; }
       .bio-title h1 { font-size: 36px; }
+      .polaroid img { width: 100%; height: 220px; }
     }
   </style>
 </head>
@@ -85,63 +201,47 @@
   </nav>
 
   <header class="site-header">
-    <img class="page-hero-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1600" alt="About Me">
-    <div class="hero-overlay"></div>
-    <div class="header-text">
-      <h1 class="header-title">About <span class="red">Me</span></h1>
-      <p class="header-tagline">the person behind the journal</p>
+
+    <div class="photos-collage">
+      <div class="photo-wrap">
+        <div class="tape"></div>
+        <div class="polaroid">
+          <img src="images/feed-the-curious-ayenne-about.JPG" alt="About Me">
+          <p class="polaroid-caption">thinking where to eat next...</p>
+        </div>
+      </div>
     </div>
+
+    <div class="header-text">
+      <h1 class="header-title">About <span class="red">Feed the Curious</span></h1>
+      <p class="header-tagline">Food &middot; Coffee &middot; Culture &middot; Stories</p>
+    </div>
+
     <div class="header-rule"></div>
+
   </header>
 
   <section style="padding-top: 48px; padding-bottom: 80px;">
     <div class="container">
       <div class="content-narrow">
 
-        <div class="bio-title">
-          <span class="script-text">Mabuhay!</span>
-          <h1>I'm Adryenne.</h1>
-        </div>
-
         <div class="bio-content">
-          <p>My love for food didn't start in a fancy restaurant or a trendy multi-roaster café. It started in a small
-            family restaurant in the province called <strong>Everlasting</strong>, where my grandfather and mother
-            cooked authentic Filipino food with nothing but heart, fire, and a traditional <em>pugon</em> fueled by
-            <em>ipa</em> that never seemed to go cold.
-          </p>
+          <p>I'm not a food critic or a trained cook. I'm someone who works a regular job, saves up where I can, and spends weekends exploring wherever curiosity points me.</p>
 
-          <img src="images/everlasting.png" alt="Everlasting Restaurant Pencil Sketch" class="inline-img">
+          <p>Growing up in Socorro, Oriental Mindoro, my grandfather ran a small family restaurant called Everlasting. From around seven years old through high school, I was always somewhere in that space, watching, eating, helping carry plates to customers. I wasn't cooking. I was just around, absorbing things without really knowing it. The smell of the <em>pugon</em>, the sound of a big batch of <em>lomi</em> being stirred, the way people came in hungry and left full. Those things stayed with me longer than I expected.</p>
 
-          <h3>Cooking with Heart</h3>
-          <p>I grew up in that kitchen long before I was tall enough to reach the stove. At six or seven years old, I
-            was already helping serve food to customers. I watched my grandfather and mother carefully simmer beloved
-            classics like <em>menudo, afritada, adobo,</em> and <em>kare-kare</em>, and masterfully stir massive batches
-            of <em>lomi</em> and <em>pancit guisado</em> for everyone from everyday regulars to entire wedding
-            celebrations.</p>
+          <img src="images/everlasting.png" alt="feed-the-curious-ayenne-about-02" class="inline-img">
+          <p class="img-caption">Everlasting closed years ago. This image is based on a real photo, AI-rendered.</p>
 
-          <p>Food, in our family, was never just a meal. It was how we showed up for people.</p>
+          <p>That's really where this started. Not from any grand ambition, just a memory of what food felt like when it meant something.</p>
 
-          <p>By high school, I was finally behind the stove myself. The very first dish I ever cooked was our signature
-            <em>lomi</em>. That moment felt less like learning a skill, and more like stepping into a deeply rooted
-            family tradition that had always been waiting for me.</p>
+          <p>These days I follow that feeling whenever time and budget allow. Local spots in Manila, out-of-town trips when I can swing it. No agenda, no checklist. Just going wherever seems interesting and seeing what I find.</p>
 
-          <h3>Following the Flavor</h3>
-          <p>Today, I'm based in Metro Manila, but I follow the food wherever it leads. My journey takes me from hidden
-            local spots in the city to out-of-town adventures across the Philippines, and even beyond our borders.</p>
+          <p>This journal is just me keeping track of all of it. The meals worth remembering, the places worth the commute, and the small discoveries that make a weekend feel well spent.</p>
 
-          <p>I am drawn to Filipino food culture above all — especially uncovering regional dishes and the rich history
-            behind how they came to be. But if there's a new flavor waiting in any corner of the world, I'll never say
-            no to trying it.</p>
+          <p>Glad you're here. Hope something makes you hungry.</p>
 
-          <h3>Welcome to Feed the Curious</h3>
-          <p>This journal is my love letter. A tribute to Filipino food and culture, to the hidden gems worth traveling
-            hours for, to the quiet cafés that feel like a sanctuary, and most importantly, to every person behind the
-            counter who has a story to tell.</p>
-
-          <p>Because every dish has a story. And I'm here to find it.</p>
-          <p>Welcome to my table.</p>
-
-          <div class="signature">Adryenne</div>
+          <p class="contact-email">ayenne@feedthecurious.com</p>
         </div>
 
       </div>
@@ -157,7 +257,7 @@
         <li><a href="kape-corner.html">Kape Corner</a></li>
         <li><a href="about.html">About Me</a></li>
       </ul>
-      <div class="copyright">&copy; 2026 Feed the Curious by Adryenne. All rights reserved.</div>
+      <div class="copyright">&copy; 2026 Feed the Curious by Ayenne. All rights reserved. E-mail: ayenne@feedthecurious.com</div>
     </div>
   </footer>
 

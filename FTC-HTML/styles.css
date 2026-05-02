@@ -121,7 +121,7 @@ img {
   transition: var(--transition);
 }
 
-.navbar.scrolled .nav-links a { color: var(--grey); }
+.navbar.scrolled .nav-links a { color: #8B1A1A; }
 
 .nav-links a::after {
   content: '';
@@ -684,7 +684,7 @@ img {
   }
 
   .nav-links.active { display: flex; }
-  .nav-links a { color: var(--grey) !important; }
+  .nav-links a { color: #8B1A1A !important; }
   .hamburger { display: block; }
 
   .hero-content { padding: 0 28px; }
